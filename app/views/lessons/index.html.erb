@@ -17,7 +17,7 @@
     <% @lessons.each do |lesson| %>
       <tr>
         <td><%= lesson.student.last_name %></td>
-        <td><%= lesson.lesson_date.strftime("%a, %d %b %Y (%l:%M%P)") %></td>
+        <td><%= I18n.l lesson.lesson_date, format: :long %></td>
         <td><%= lesson.plan %></td>
         <td><%= lesson.status %></td>
         <td><%= link_to 'Show', lesson %></td>

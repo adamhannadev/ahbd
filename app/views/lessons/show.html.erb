@@ -1,24 +1,19 @@
-<p id="notice"><%= notice %></p>
+<% require 'time_ago_in_words' %>
 
-<p>
-  <strong>Student:</strong>
-  <%= @lesson.student %>
-</p>
+<div class="ui card">
+  <div class="content">
+    <div class="header"><%= @lesson.student.last_name + ', ' + @lesson.student.first_name %></div>
+    <div class="meta">Time From Now: <%= distance_of_time_in_words(@lesson.lesson_date, Time.now)  %></div>
+    <div class="description">
+      <%= @lesson.plan %>
+    </div>
+  </div>
+  <div class="extra content">
+    <i class="check icon"></i>
+   <%= @lesson.status %>
+  </div>
+</div>
 
-<p>
-  <strong>Lesson date:</strong>
-  <%= @lesson.lesson_date %>
-</p>
-
-<p>
-  <strong>Plan:</strong>
-  <%= @lesson.plan %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @lesson.status %>
-</p>
 
 <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
 <%= link_to 'Back', lessons_path %>

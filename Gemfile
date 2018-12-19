@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'semantic-ui-sass'
 gem 'devise'
-
+gem 'time_ago_in_words'
 gem 'flatpickr_rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
