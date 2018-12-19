@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lessons</h1>
+<h1 class="ui header">Lessons</h1>
 
-<table>
+<table class="ui celled table">
   <thead>
     <tr>
       <th>Student</th>
@@ -16,8 +16,8 @@
   <tbody>
     <% @lessons.each do |lesson| %>
       <tr>
-        <td><%= lesson.student %></td>
-        <td><%= lesson.lesson_date %></td>
+        <td><%= lesson.student.last_name %></td>
+        <td><%= lesson.lesson_date.strftime("%a, %d %b %Y (%l:%M%P)") %></td>
         <td><%= lesson.plan %></td>
         <td><%= lesson.status %></td>
         <td><%= link_to 'Show', lesson %></td>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Lesson', new_lesson_path %>
+<%= link_to 'New Lesson', new_lesson_path, class: "ui button" %>
