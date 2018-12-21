@@ -30,6 +30,7 @@ gem 'semantic-ui-sass'
 gem 'devise'
 gem 'time_ago_in_words'
 gem 'flatpickr_rails'
+gem 'jquery-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

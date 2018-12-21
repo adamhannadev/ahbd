@@ -11,18 +11,10 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
 //= require activestorage
 //= require turbolinks
 //= require_tree .
 //= require semantic-ui
 //= require flatpickr
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   flatpickr('#dateTime',     
-//   {
-//     enableTime: true,
-//     dateFormat: "Y-m-d H:i",
-//     altInput: true,
-//     altFormat: "F j, Y (H:iK)"
-//   });
-// })
