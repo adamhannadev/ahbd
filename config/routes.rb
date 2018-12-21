@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :payments
   resources :lessons
   resources :students
   devise_for :users
