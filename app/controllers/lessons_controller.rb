@@ -1,6 +1,7 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :ensure_admin!
+  
   # GET /lessons
   # GET /lessons.json
   def index
@@ -78,5 +79,14 @@ class LessonsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
       params.require(:lesson).permit(:student_id, :lesson_date, :plan, :status)
+    end
+    
+    def ensure_admin!
+      unless current_user.admin?
+        sign_out current_user
+        flash[:notice] = 'Sorry, you have to have admin privileges to see this page.'
+      redirect_to root_path
+      return false
+      end
     end
 end
