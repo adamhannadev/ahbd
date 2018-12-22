@@ -1,3 +1,28 @@
 <h1>Adam Hanna Ballroom Dance</h1>
-<button class="ui button">Hello</button>
 
+<div class="ui statistics">
+  <div class="statistic">
+    <div class="value">
+      <%= Lesson.all.count %>
+    </div>
+    <div class="label">
+      Lessons
+    </div>
+  </div>
+  <div class="statistic">
+    <div class="value">
+      <%= Student.all.count %>
+    </div>
+    <div class="label">
+      Students
+    </div>
+  </div>
+  <div class="statistic">
+    <div class="value">
+      <%= Payment.all.count %>
+    </div>
+    <div class="label">
+      Payments
+    </div>
+  </div>
+</div>

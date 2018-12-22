@@ -10,8 +10,10 @@
   </head>
 
   <body class="ui container">
-    <br>
-<div class="ui four item menu">
+
+        <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div class="ui four item menu">
   <%= link_to "Lessons", lessons_path, class: "item" %>
   <%= link_to "Students", students_path, class: "item" %>
   <%= link_to "Payments", payments_path, class: "item" %>
@@ -21,10 +23,8 @@
   <%= link_to('Login', new_user_session_path, class: "item")  %>  
 <% end %>
 </div>
+        <%= yield %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
-    <%= yield %>
   </body>
 </html>

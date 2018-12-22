@@ -47,6 +47,10 @@
     <%= form.radio_button :account, 'Chequing Account', :class => "ui radio checkbox"  %>
     <%= form.label :account_chequing, 'Chequing Account' %>
   </div>
+    <div class="field">
+    <%= form.label :description, 'Description' %>
+    <%= form.text_area :description %>
+  </div>
 
   <div class="actions">
     <%= form.submit :class => "ui button" %>
