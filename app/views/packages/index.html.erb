@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Packages</h1>
+
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Payment</th>
+      <th>Lessons used</th>
+      <th>Lessons remaining</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @packages.each do |package| %>
+      <tr>
+        <td><%= package.student.last_name %></td>
+        <td><%= package.payment.payment_date %></td>
+        <td><%= package.lessons_used %></td>
+        <td><%= package.lessons_remaining %></td>
+        <td><%= link_to 'Show', package %></td>
+        <td><%= link_to 'Edit', edit_package_path(package) %></td>
+        <td><%= link_to 'Destroy', package, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Package', new_package_path %>

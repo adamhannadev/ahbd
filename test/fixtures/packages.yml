@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student: one
+  payment: one
+  lessons_used: 1
+  lessons_remaining: 1
+
+two:
+  student: two
+  payment: two
+  lessons_used: 1
+  lessons_remaining: 1

@@ -1,0 +1,37 @@
+<%= form_with(model: package, local: true, :class=>"ui form") do |form| %>
+  <% if package.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(package.errors.count, "error") %> prohibited this package from being saved:</h2>
+
+      <ul>
+      <% package.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :student_id %>
+    <%= form.collection_select(:student_id, Student.all, :id, :last_name, {:prompt => true}, {:class => "ui floating search select dropdown"}) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment_id %>
+    <%= form.collection_select(:payment_id, Payment.all, :id, :id, {:prompt => true}, {:class => "ui floating search select dropdown"}) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lessons_used %>
+    <%= form.number_field :lessons_used %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lessons_remaining %>
+    <%= form.number_field :lessons_remaining %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit, :class=>"ui button" %>
+  </div>
+<% end %>

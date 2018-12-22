@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :packages
   resources :payments
   resources :lessons
   get 'week_calendar', to: 'lessons#week_calendar'
