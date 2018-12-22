@@ -12,3 +12,5 @@ $(document).on 'turbolinks:load', ->
    );
  $('select.dropdown')
     .dropdown();
+ $('.menu .item')
+  .tab();

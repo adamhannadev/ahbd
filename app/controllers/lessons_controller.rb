@@ -1,12 +1,20 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /lessons
   # GET /lessons.json
   def index
     @lessons = Lesson.all
   end
 
+  def week_calendar
+    @lessons = Lesson.all
+  end
+  
+  def month_calendar
+    @lessons = Lesson.all
+  end
+  
   # GET /lessons/1
   # GET /lessons/1.json
   def show

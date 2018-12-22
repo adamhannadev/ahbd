@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %>
+</p>
 
 <h1 class="ui header">Lessons</h1>
 
@@ -16,18 +18,31 @@
   <tbody>
     <% @lessons.each do |lesson| %>
       <tr>
-        <td><%= lesson.student.last_name %></td>
-        <td><%= I18n.l lesson.lesson_date, format: :long %></td>
-        <td><%= lesson.plan %></td>
-        <td><%= lesson.status %></td>
-        <td><%= link_to 'Show', lesson %></td>
-        <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
-        <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= lesson.student.last_name %>
+        </td>
+        <td>
+          <%= I18n.l lesson.lesson_date, format: :long %>
+        </td>
+        <td>
+          <%= lesson.plan %>
+        </td>
+        <td>
+          <%= lesson.status %>
+        </td>
+        <td>
+          <%= link_to 'Show', lesson %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_lesson_path(lesson) %>
+        </td>
+        <td>
+          <%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
-    <% end %>
+      <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'New Lesson', new_lesson_path, class: "ui button" %>

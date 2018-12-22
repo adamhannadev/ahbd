@@ -1,0 +1,11 @@
+<%= week_calendar events: @lessons do |date, lessons| %>
+    <%= date %>
+
+        <% lessons.each do |lesson| %>
+            <div>
+                <%= lesson.student.last_name %> -
+                    <%= I18n.l lesson.lesson_date, format: :time  %>
+            </div>
+            <% end %>
+                <% end %>
+  

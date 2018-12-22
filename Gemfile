@@ -31,6 +31,7 @@ gem 'devise'
 gem 'time_ago_in_words'
 gem 'flatpickr_rails'
 gem 'jquery-rails'
+gem 'simple_calendar', "~> 2.0"
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
