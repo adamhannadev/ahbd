@@ -5,7 +5,7 @@ $(document).on 'turbolinks:load', ->
  jQuery ->
   $("#dateTime").flatpickr(
    {
-    enableTime: true,
+    enableTime: false,
     altInput: true,
     altFormat: "F j, Y"
     }
