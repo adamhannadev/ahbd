@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
   before_action :set_payment, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :ensure_admin!
+  
   # GET /payments
   # GET /payments.json
   def index
@@ -70,5 +71,13 @@ class PaymentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def payment_params
       params.require(:payment).permit(:student_id, :payment_date, :payment_type, :amount, :account)
+    end
+    
+    def ensure_admin!
+      unless current_user.admin?
+        flash[:notice] = 'Sorry, you have to have admin privileges to see this page.'
+      redirect_to root_path
+      return false
+      end
     end
 end

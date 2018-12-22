@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]  
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :ensure_admin!
+  
   # GET /students
   # GET /students.json
   def index
@@ -70,5 +71,13 @@ class StudentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
       params.require(:student).permit(:last_name, :first_name, :email, :phone)
+    end
+    
+    def ensure_admin!
+      unless current_user.admin?
+        flash[:notice] = 'Sorry, you have to have admin privileges to see this page.'
+      redirect_to root_path
+      return false
+      end
     end
 end
