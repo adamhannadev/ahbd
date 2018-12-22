@@ -1,6 +1,6 @@
 <%= form_with(model: lesson, local: true, :class => "ui form") do |form| %>
   <% if lesson.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="ui message">
       <h2><%= pluralize(lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
 
       <ul>
@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :student_id %>
-    <%= form.collection_select(:student_id, Student.all, :id, :last_name, {:prompt => true}, {:class => "ui floating search selection dropdown"}) %>
+    <%= form.collection_select(:student_id, Student.all, :id, :last_name, {:prompt => true}, {:class => "ui floating search select dropdown"}) %>
   </div>
 
   <div class="field">

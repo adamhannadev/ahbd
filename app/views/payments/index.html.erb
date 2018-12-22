@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
 
 <h1>Payments</h1>
 
@@ -20,7 +20,7 @@
         <td><%= payment.student.last_name %></td>
         <td><%= I18n.l payment.payment_date, format: :long %></td>
         <td><%= payment.payment_type %></td>
-        <td><%= payment.amount %></td>
+        <td><%= number_to_currency payment.amount %></td>
         <td><%= payment.account %></td>
         <td><%= link_to 'Show', payment %></td>
         <td><%= link_to 'Edit', edit_payment_path(payment) %></td>

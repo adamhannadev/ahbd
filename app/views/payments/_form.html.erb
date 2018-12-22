@@ -12,18 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :student_id %>
-    <%= form.text_field :student_id %>
+    <%= form.label :student_id, "Student" %>
+        <%= form.collection_select(:student_id, Student.all, :id, :last_name, {:prompt => true}, {:class => "ui floating search select dropdown"}) %>
   </div>
 
   <div class="field">
-    <%= form.label :payment_date %>
+    <%= form.label :payment_date, "Payment Date" %>
     <%= form.text_field :payment_date, :id => "dateTime" %>
   </div>
 
-  <div class="field">
-    <%= form.label :payment_type %>
-    <%= form.text_field :payment_type %>
+  <div class="field inline fields">
+    <%= form.label :payment_type, "Payment Type" %>
+    <%= form.radio_button :payment_type, 'Cash', :class => "ui radio checkbox"  %>
+    <%= form.label :payment_type_cash, 'Cash' %>
+    <%= form.radio_button :payment_type, 'Cheque', :class => "ui radio checkbox"  %>
+    <%= form.label :payment_type_cheque, 'Cheque' %>
+    <%= form.radio_button :payment_type, 'Transfer', :class => "ui radio checkbox"  %>
+    <%= form.label :payment_type_transfer, 'Transfer' %>
+    <%= form.radio_button :payment_type, 'Credit', :class => "ui radio checkbox"  %>
+    <%= form.label :payment_type_credig, 'Credit Card' %>
   </div>
 
   <div class="field">
@@ -31,9 +38,14 @@
     <%= form.text_field :amount %>
   </div>
 
-  <div class="field">
-    <%= form.label :account %>
-    <%= form.text_field :account %>
+    <div class="field inline fields">
+    <%= form.label :account, "Into Account" %>
+    <%= form.radio_button :account, 'IOU', :class => "ui radio checkbox"  %>
+    <%= form.label :account_iou, 'IOU' %>
+    <%= form.radio_button :account, 'Cash on Hand', :class => "ui radio checkbox"  %>
+    <%= form.label :account_cash, 'Cash On Hand' %>
+    <%= form.radio_button :account, 'Chequing Account', :class => "ui radio checkbox"  %>
+    <%= form.label :account_chequing, 'Chequing Account' %>
   </div>
 
   <div class="actions">
