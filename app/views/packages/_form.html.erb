@@ -20,6 +20,11 @@
     <%= form.label :payment_id %>
     <%= form.collection_select(:payment_id, Payment.all, :id, :id, {:prompt => true}, {:class => "ui floating search select dropdown"}) %>
   </div>
+  
+  <div class="field">
+    <%= form.label :lessons_purchased %>
+    <%= form.text_field :lessons_purchased %>
+  </div>
 
   <div class="actions">
     <%= form.submit :class=>"ui button" %>
