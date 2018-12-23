@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_22_231455) do
+ActiveRecord::Schema.define(version: 2018_12_23_001159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 2018_12_22_231455) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "package_id"
+    t.index ["package_id"], name: "index_lessons_on_package_id"
     t.index ["student_id"], name: "index_lessons_on_student_id"
   end
 
   create_table "packages", force: :cascade do |t|
     t.bigint "student_id"
     t.bigint "payment_id"
-    t.integer "lessons_used"
-    t.integer "lessons_remaining"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["payment_id"], name: "index_packages_on_payment_id"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2018_12_22_231455) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "lessons", "packages"
   add_foreign_key "lessons", "students"
   add_foreign_key "packages", "payments"
   add_foreign_key "packages", "students"
