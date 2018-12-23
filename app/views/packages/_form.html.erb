@@ -27,7 +27,7 @@
   </div>
   
   <div class="field ui slider checkbox">
-    <%= form.check_box(:active, {checked: (@package.active ? false : true)}, 0, 1) %>
+    <%= form.check_box(:active, {checked: (@package.active ? true : false)}, 1, 0) %>
     <%= form.label :active %>
   </div>
 
