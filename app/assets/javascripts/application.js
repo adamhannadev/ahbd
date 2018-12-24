@@ -10,10 +10,27 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 //= require jquery
+//= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
 //= require semantic-ui
 //= require flatpickr
+//= require moment
+//= require fullcalendar
+//= require_tree .
+
+function eventCalendar() {
+  return $('#calendar').fullCalendar({ });
+};
+
+function clearCalendar() {
+  $('#calendar').fullCalendar('delete'); 
+  $('#calendar').html('');
+};
+
+$(document).on('turbolinks:load', function(){
+  eventCalendar();  
+});
+
+$(document).on('turbolinks:before-cache', clearCalendar);

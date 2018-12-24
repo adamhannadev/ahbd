@@ -32,6 +32,9 @@ gem 'time_ago_in_words'
 gem 'flatpickr_rails'
 gem 'jquery-rails'
 gem 'simple_calendar', "~> 2.0"
+gem 'ice_cube'
+gem 'momentjs-rails'
+gem 'fullcalendar-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
