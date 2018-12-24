@@ -3,8 +3,7 @@
 
         <% lessons.each do |lesson| %>
             <div>
-                <%= lesson.student.last_name %> -
-                    <%= I18n.l lesson.lesson_date, format: :time  %>
+               <%= link_to lesson.student.last_name + " " + lesson.lesson_date.strftime("%I:%M%p"), lesson, :class=>"ui button" %>
             </div>
             <% end %>
                 <% end %>
