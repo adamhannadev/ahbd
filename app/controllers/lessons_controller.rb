@@ -7,12 +7,8 @@ class LessonsController < ApplicationController
   def index
     @lessons = Lesson.all
   end
-
-  def week_calendar
-    @lessons = Lesson.all
-  end
   
-  def month_calendar
+  def calendar
     @lessons = Lesson.all
   end
   
@@ -78,6 +74,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:student_id, :lesson_date, :plan, :status, :package_id)
+      params.require(:lesson).permit(:student_id, :lesson_date, :plan, :status, :package_id, :end_date)
     end
 end

@@ -18,7 +18,12 @@
 
   <div class="field">
     <%= form.label :lesson_date %>
-    <%= form.text_field :lesson_date, :id => "dateTime" %>
+    <%= form.text_field :lesson_date, :class => "dateTime" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.text_field :end_date, :class => "dateTime" %>
   </div>
 
   <div class="field">

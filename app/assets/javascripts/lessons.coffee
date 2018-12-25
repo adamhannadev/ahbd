@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on 'turbolinks:load', ->
  jQuery ->
-  $("#dateTime").flatpickr(
+  $(".dateTime").flatpickr(
    {
     enableTime: true,
     altInput: true,
