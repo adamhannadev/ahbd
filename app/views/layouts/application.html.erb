@@ -14,19 +14,14 @@
 <br>
 
   <div class="ui container">
-    <div class="ui six item menu">
-
-      <%= link_to "Dashboard", root_path, class: "item" %>
-        <%= link_to "Lessons", lessons_path, class: "item" %>
-          <%= link_to "Students", students_path, class: "item" %>
-            <%= link_to "Payments", payments_path, class: "item" %>
-            <%= link_to "Packages", packages_path, class: "item" %>
-              <% if user_signed_in? %>
-                <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "item") %>
-                  <% else %>
-                    <%= link_to('Login', new_user_session_path, class: "item")  %>
-                      <% end %>
-    </div>
+      <img class="ui left medium image rounded" src="https://adamhannaballroom.dance/wp-content/uploads/2018/12/ahbdLogo2018.png">
+    
+    
+    <% if current_user.try(:admin?) %>
+   <%= render "layouts/partials/admin_menu" %>
+   <% else %>
+    <%= render "layouts/partials/main_menu" %>
+   <% end %>
         <p class="notice">
       <%= notice %>
     </p>
