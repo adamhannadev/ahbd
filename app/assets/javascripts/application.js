@@ -18,11 +18,11 @@
 //= require flatpickr
 //= require moment
 //= require fullcalendar
+//= require trumbowyg
 //= require_tree .
 
-
 $(document).on('turbolinks:load', function(){
-  eventCalendar();  
+  eventCalendar();
 });
 
 $(document).on('turbolinks:before-cache', clearCalendar);

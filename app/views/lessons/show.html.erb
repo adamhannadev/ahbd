@@ -5,7 +5,7 @@
     <div class="header"><%= @lesson.student.last_name + ', ' + @lesson.student.first_name %></div>
     <div class="meta">Time From Now: <%= distance_of_time_in_words(@lesson.lesson_date, Time.now)  %></div>
     <div class="description">
-      <%= @lesson.plan %>
+      <%= sanitize @lesson.plan %>
     </div>
   </div>
   <div class="extra content">

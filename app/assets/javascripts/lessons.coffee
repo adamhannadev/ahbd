@@ -14,3 +14,5 @@ $(document).on 'turbolinks:load', ->
     .dropdown();
  $('.menu .item')
   .tab();
+ $('.editor').trumbowyg({
+ });

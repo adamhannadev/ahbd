@@ -24,7 +24,7 @@
           <%= I18n.l lesson.lesson_date, format: :long %>
         </td>
         <td>
-          <%= lesson.plan %>
+          <%= sanitize lesson.plan %>
         </td>
         <td>
           <% if lesson.is_paid %><i class="check icon"></i><% end %>
