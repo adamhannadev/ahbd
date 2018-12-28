@@ -5,6 +5,10 @@ class Lesson < ApplicationRecord
   before_save :set_status
   validates :lesson_date, presence: true
   
+    def end_date
+        self.lesson_date  + 60*60
+    end
+  
 private
   def set_status
     if self.plan.present?

@@ -11,7 +11,8 @@ $(document).on 'turbolinks:load', ->
     }
    );
  $('select.dropdown')
-    .dropdown();
+    .dropdown({
+     clearable: true});
  $('.menu .item')
   .tab();
  $('.editor').trumbowyg({

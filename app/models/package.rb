@@ -4,7 +4,7 @@ class Package < ApplicationRecord
   has_many :lessons, dependent: :destroy
   
   def active
-   if self.lessons < self.lessons_purchased 
+   if self.lessons.count < self.lessons_purchased
    return true
    end
   end

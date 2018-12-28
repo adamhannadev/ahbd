@@ -17,7 +17,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :lesson_date %>
+    <%= form.label :lesson_date, 'Lesson Date' %>
     <%= form.text_field :lesson_date, :class => "dateTime" %>
   </div>
 
@@ -28,7 +28,7 @@
   
    <div class="field">
     <%= form.label :payment_id %>
-    <%= form.collection_select(:payment_id, Payment.all, :id, :to_s, {:prompt => true}, {:class => "ui floating search select dropdown"}) %>
+    <%= form.collection_select(:payment_id, Payment.all, :id, :to_s, {:prompt => true}, {:class => "ui floating search select dropdown", :prompt => true}) %>
   </div>
   
   <div class="field">
