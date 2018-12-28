@@ -22,18 +22,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :end_date %>
-    <%= form.text_field :end_date, :class => "dateTime" %>
-  </div>
-
-  <div class="field">
     <%= form.label :plan %>
     <%= form.text_area :plan %>
   </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
+  
+   <div class="field">
+    <%= form.label :payment_id %>
+    <%= form.collection_select(:payment_id, Payment.all, :id, :to_s, {:prompt => true}, {:class => "ui floating search select dropdown"}) %>
   </div>
   
   <div class="field">

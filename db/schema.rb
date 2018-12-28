@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_24_172347) do
+ActiveRecord::Schema.define(version: 2018_12_27_043323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,14 +19,14 @@ ActiveRecord::Schema.define(version: 2018_12_24_172347) do
     t.bigint "student_id"
     t.datetime "lesson_date"
     t.text "plan"
-    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "package_id"
-    t.integer "occurrence"
-    t.date "start_date"
-    t.date "end_date"
+    t.bigint "payment_id"
+    t.boolean "is_paid"
+    t.boolean "is_planned"
     t.index ["package_id"], name: "index_lessons_on_package_id"
+    t.index ["payment_id"], name: "index_lessons_on_payment_id"
     t.index ["student_id"], name: "index_lessons_on_student_id"
   end
 
@@ -53,6 +53,12 @@ ActiveRecord::Schema.define(version: 2018_12_24_172347) do
     t.index ["student_id"], name: "index_payments_on_student_id"
   end
 
+  create_table "something_elses", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "last_name"
     t.string "first_name"
@@ -76,6 +82,7 @@ ActiveRecord::Schema.define(version: 2018_12_24_172347) do
   end
 
   add_foreign_key "lessons", "packages"
+  add_foreign_key "lessons", "payments"
   add_foreign_key "lessons", "students"
   add_foreign_key "packages", "payments"
   add_foreign_key "packages", "students"

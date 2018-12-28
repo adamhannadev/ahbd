@@ -6,9 +6,10 @@
   <thead>
     <tr>
       <th>Student</th>
-      <th>Lesson date</th>
+      <th>Lesson Date</th>
       <th>Plan</th>
-      <th>Status</th>
+      <th>Paid</th>
+      <th>Planned</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,7 +27,10 @@
           <%= lesson.plan %>
         </td>
         <td>
-          <%= lesson.status %>
+          <% if lesson.is_paid %><i class="check icon"></i><% end %>
+        </td>
+        <td>
+          <% if lesson.is_planned %><i class="check icon"></i><% end %>
         </td>
         <td>
           <%= link_to 'Show', lesson %>

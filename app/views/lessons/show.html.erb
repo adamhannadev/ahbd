@@ -9,8 +9,8 @@
     </div>
   </div>
   <div class="extra content">
-    <i class="check icon"></i>
-   <%= @lesson.status %>
+   <% if @lesson.is_paid %><button class="ui left attached green button">Paid</button><% else %><button class="ui left attached red button">Unpaid</button><% end %>
+   <% if @lesson.is_planned %><button class="ui right attached green button">Planned</button><% else %><button class="ui right attached red button">Unplanned</button><% end %>
   </div>
 </div>
 
