@@ -3,7 +3,7 @@ class Lesson < ApplicationRecord
   has_one :package
   has_one :payment
   before_save :set_status
-  
+  validates :lesson_date, presence: true
   
 private
   def set_status
