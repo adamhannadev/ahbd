@@ -13,7 +13,8 @@ $(document).on 'turbolinks:load', ->
  $('select.dropdown')
     .dropdown({
      clearable: true,
-     placeholder: 'auto'});
+     placeholder: 'Please select'
+     });
  $('.menu .item')
   .tab();
  $('.editor').trumbowyg({
