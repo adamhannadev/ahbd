@@ -20,6 +20,11 @@ class LessonsController < ApplicationController
   # GET /lessons/new
   def new
     @lesson = Lesson.new
+    
+    respond_to do |format|
+    format.html
+    format.js
+    end
   end
 
   # GET /lessons/1/edit
