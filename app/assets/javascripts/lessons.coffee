@@ -10,10 +10,9 @@ $(document).on 'turbolinks:load', ->
     altFormat: "F j, Y, h:iK"
     }
    );
- $('select.dropdown')
+ $('.dropdown')
     .dropdown({
      clearable: true,
-     placeholder: 'Please select'
      });
  $('.menu .item')
   .tab();
