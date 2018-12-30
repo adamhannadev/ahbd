@@ -33,7 +33,7 @@
   
   <div class="field">
     <%= form.label :package_id %>
-        <%= form.collection_select(:package_id, Package.all, :id, :title, {:include_blank => "Please select"}, {:class => "ui floating search select dropdown"}) %>
+        <%= form.collection_select(:package_id, Package.where(active: 1), :id, :title, {:include_blank => "Please select"}, {:class => "ui floating search select dropdown"}) %>
   </div>
 
   <div class="actions">

@@ -8,8 +8,6 @@ class Package < ApplicationRecord
    return self.lessons_purchased - self.lessons.count
   end
   
-  
-  
   def title
    self.student.last_name + ' - ' + self.payment.payment_date.strftime("%m/%d/%Y")
   end
