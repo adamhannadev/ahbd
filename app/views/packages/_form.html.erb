@@ -25,11 +25,6 @@
     <%= form.label :lessons_purchased %>
     <%= form.text_field :lessons_purchased %>
   </div>
-  
-  <div class="field ui slider checkbox">
-    <%= form.check_box(:active, {checked: (@package.active ? true : false)}, 1, 0) %>
-    <%= form.label :active %>
-  </div>
 
   <div class="actions">
     <%= form.submit :class=>"ui button" %>
