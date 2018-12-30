@@ -28,7 +28,7 @@
   
    <div class="field">
     <%= form.label :payment_id %>
-    <%= form.collection_select(:payment_id, Payment.all, :id, :to_s, {:prompt => true}, {:class => "ui floating search select dropdown", :prompt => true}) %>
+    <%= form.collection_select(:payment_id, Payment.all, :id, :to_s, {:prompt => true}, {:class => "ui floating search select dropdown"}) %>
   </div>
   
   <div class="field">
