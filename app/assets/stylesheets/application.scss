@@ -13,6 +13,7 @@
  *= require flatpickr
  *= require fullcalendar
  *= require trumbowyg
+ // app/assets/stylesheets/application
+ *= require semantic-ui/dist/semantic
  *= require_tree .
  */
-@import "semantic-ui";
