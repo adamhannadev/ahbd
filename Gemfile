@@ -39,7 +39,9 @@ gem 'less-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+group :production do
+  gem 'rails_12factor'
+end
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
