@@ -2,6 +2,7 @@
   "name": "ahbd",
   "private": true,
   "dependencies": {
-    "semantic-ui": "^2.4.2"
+    "semantic-ui": "^2.4.2",
+    "font-awesome": "^4.7.0"
   }
 }
