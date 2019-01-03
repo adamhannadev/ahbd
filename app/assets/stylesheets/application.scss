@@ -17,3 +17,6 @@
  *= require semantic-ui/dist/semantic
  *= require_tree .
  */
+ 
+ $fa-font-path: "font-awesome/fonts";
+@import 'font-awesome/scss/font-awesome';

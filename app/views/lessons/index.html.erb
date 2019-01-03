@@ -24,10 +24,10 @@
           <%= I18n.l lesson.lesson_date, format: :long %>
         </td>
         <td>
-          <% if lesson.is_paid %>X<% end %>
+          <% if lesson.is_paid %><i class="ui check icon"></i><% end %>
         </td>
         <td>
-          <% if lesson.is_planned %>X<% end %>
+          <% if lesson.is_planned %><i class="ui check icon"></i><% end %>
         </td>
         <td>
           <%= link_to 'Show', lesson %>
