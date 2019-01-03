@@ -5,7 +5,7 @@ class PaymentsController < ApplicationController
   # GET /payments
   # GET /payments.json
   def index
-    @payments = Payment.all
+    @payments = Payment.where('payment_date >= ?', 1.week.ago).order(payment_date: :asc)
   end
 
   # GET /payments/1
