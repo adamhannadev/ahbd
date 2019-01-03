@@ -11,8 +11,10 @@ function eventCalendar() {
     eventLimit: true,
     nowIndicator: true,
     navLinks: true,
+    slotDuration: "00:60:00",
     minTime: "09:30:00",
     maxTime: "22:00:00",
+    timeFormat: "h:mma",
     businessHours: [ // specify an array instead
       {
         dow: [2, 3, 5], // Monday, Tuesday, Wednesday

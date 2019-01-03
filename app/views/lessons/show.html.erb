@@ -13,7 +13,6 @@
    <% if @lesson.is_planned %><button class="ui right attached green button">Planned</button><% else %><button class="ui right attached red button">Unplanned</button><% end %>
   </div>
 </div>
-
-
+<%= link_to 'Back', lessons_path %> |
 <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
-<%= link_to 'Back', lessons_path %>
+<%= link_to 'Calendar', calendar_path %>

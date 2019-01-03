@@ -22,8 +22,4 @@
 //= require semantic-ui/dist/semantic
 //= require_tree .
 
-$(document).on('turbolinks:load', function(){
-  eventCalendar();
-});
-
 $(document).on('turbolinks:before-cache', clearCalendar);
