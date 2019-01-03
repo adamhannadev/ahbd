@@ -27,10 +27,10 @@
           <%= sanitize lesson.plan %>
         </td>
         <td>
-          <% if lesson.is_paid %><i class="check icon"></i><% end %>
+          <% if lesson.is_paid %>X<% end %>
         </td>
         <td>
-          <% if lesson.is_planned %><i class="check icon"></i><% end %>
+          <% if lesson.is_planned %>X<% end %>
         </td>
         <td>
           <%= link_to 'Show', lesson %>
