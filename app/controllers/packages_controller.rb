@@ -4,7 +4,7 @@ class PackagesController < ApplicationController
   # GET /packages
   # GET /packages.json
   def index
-    @packages = Package.all
+    @packages = Package.where(active: 1).order(payment_id: :asc)
   end
 
   # GET /packages/1
