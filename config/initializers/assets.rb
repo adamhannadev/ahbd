@@ -13,11 +13,10 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
+# font-awesome fonts
+Rails.application.config.assets.precompile << %r{font-awesome/fonts/[\w-]+\.(?:eot|svg|ttf|woff2?)$}
+
 Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'semantic')
 Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'semantic', 'semantic-ui', 'src', 'themes', 'default')
 
-# yarn
-Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
-# font-awesome fonts
-Rails.application.config.assets.precompile << %r{font-awesome/fonts/[\w-]+\.(?:eot|svg|ttf|woff2?)$}
