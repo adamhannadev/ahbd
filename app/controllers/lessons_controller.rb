@@ -8,9 +8,6 @@ class LessonsController < ApplicationController
     @lessons = Lesson.all
     respond_to do |format|
       format.html
-      format.pdf do
-        render pdf: "index"   # Excluding ".pdf" extension.
-      end
     end
   end
   
