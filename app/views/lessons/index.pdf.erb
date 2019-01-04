@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <%= wicked_pdf_stylesheet_link_tag "pdf" -%>
+    <%= wicked_pdf_javascript_include_tag "number_pages" %>
+  </head>
+  <body onload='number_pages'>
+    <div id="header">
+    </div>
+    <div id="content">
+      <%= yield %>
+      <h1 class="ui header">Lessons</h1>
+<a href="/calendar" class="ui button">Calendar</a>
+<%= link_to 'New Lesson', new_lesson_path, class: "ui button" %>
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Lesson Date</th>
+      <th>Paid</th>
+      <th>Planned</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lessons.each do |lesson| %>
+      <tr>
+        <td>
+          <%= lesson.student.last_name %>
+        </td>
+        <td>
+          <%= I18n.l lesson.lesson_date, format: :long %>
+        </td>
+        <td>
+          <% if lesson.is_paid %><span class="ui centered">X</span><% end %>
+        </td>
+        <td>
+          <% if lesson.is_planned %><span class="ui centered">X</span><% end %>
+        </td>
+        <td>
+          <%= link_to 'Show', lesson %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_lesson_path(lesson) %>
+        </td>
+        <td>
+          <%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+    </div>
+  </body>
+</html>

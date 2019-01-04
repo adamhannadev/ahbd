@@ -5,7 +5,13 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = Lesson.where('lesson_date >= ?', 1.week.ago)
+    @lessons = Lesson.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "index"   # Excluding ".pdf" extension.
+      end
+    end
   end
   
   def calendar
