@@ -6,9 +6,7 @@ class LessonsController < ApplicationController
   # GET /lessons.json
   def index
     @lessons = Lesson.all
-    respond_to do |format|
-      format.html
-    end
+
   end
   
   def calendar
