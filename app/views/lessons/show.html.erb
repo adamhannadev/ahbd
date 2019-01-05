@@ -1,17 +1,15 @@
-<% require 'time_ago_in_words' %>
-
-<div class="ui card">
-  <div class="content">
-    <div class="header"><%= @lesson.student.last_name + ', ' + @lesson.student.first_name %></div>
-    <div class="meta">Time From Now: <%= distance_of_time_in_words(@lesson.lesson_date, Time.now)  %></div>
+<div class="ui segment">
+    <h1 class="header"><%= @lesson.student.last_name + ', ' + @lesson.student.first_name %> - <%= @lesson.lesson_date.strftime("%m/%d/%y @ %I:%M%p") %></h1>
+    <div class="meta"><%= distance_of_time_in_words(@lesson.lesson_date, Time.now) %> <% if @lesson.lesson_date < Date.current %>ago.<% else %>until this lesson.<% end %></div>
     <div class="description">
+      <h3>Plan</h3>
       <%= sanitize @lesson.plan %>
     </div>
   </div>
   <div class="extra content">
    <% if @lesson.is_paid %><button class="ui left attached green button">Paid</button><% else %><button class="ui left attached red button">Unpaid</button><% end %>
    <% if @lesson.is_planned %><button class="ui right attached green button">Planned</button><% else %><button class="ui right attached red button">Unplanned</button><% end %>
-  </div>
+  
 </div>
 <%= link_to 'Back', lessons_path %> |
 <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
