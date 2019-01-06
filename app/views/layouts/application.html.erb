@@ -31,7 +31,7 @@
       <% end %>
         </ul>
         <a class="mobile-menu-toggle display-md-down"></a>
-        <ul class="mobile-menu menu" style="display:none;">
+        <ul class="mobile-menu menu display-md-down">
       <li><%= link_to "Dashboard", root_path, class: "mobile-menu-item" %></li>
       <li><%= link_to "Lessons", lessons_path, class: "mobile-menu-item" %></li>
       <li><%= link_to "Students", students_path, class: "mobile-menu-item" %></li>
@@ -66,8 +66,8 @@
             <div class="row">
                 <div class="col col-lg-5">
                     <div class="footer-text">
-                        <p class="h3">Footer Example</p>
-                        <p>This is an example of the footer component.  You don't have to use this layout, but it's a good example of what you can do with what's provided.  If you wanted to included more columns for links and remove this text block, you can.</p>
+                        
+                        <%= image_tag 'logo.png' %>
                     </div>
                 </div>
                 <div class="col col-sm-6 col-lg-3 col-lg-offset-1">

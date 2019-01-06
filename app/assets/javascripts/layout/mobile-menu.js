@@ -19,10 +19,4 @@ $('.mobile-menu-item').on('click', function(){
   $('.mobile-menu').addClass('animated fadeOut')
 }); 
 
-  if ( $('.alert').is(":visible") ) {
-    $('.alert').ani('fadeOut delay-3s', function(){
-        $('.alert').hide()
-    })
-  } 
-  
 }); 
