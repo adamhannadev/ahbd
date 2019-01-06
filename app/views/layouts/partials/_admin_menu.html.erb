@@ -1,13 +1,11 @@
-  <div class="ui six item stackable menu">
 
-      <%= link_to "Dashboard", root_path, class: "item" %>
-        <%= link_to "Lessons", lessons_path, class: "item" %>
-          <%= link_to "Students", students_path, class: "item" %>
-            <%= link_to "Payments", payments_path, class: "item" %>
-            <%= link_to "Packages", packages_path, class: "item" %>
-              <% if user_signed_in? %>
-                <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "item") %>
-                  <% else %>
-                    <%= link_to('Login', new_user_session_path, class: "item")  %>
-                      <% end %>
-    </div>
+      <%= link_to "Dashboard", root_path, class: "btn" %>
+      <%= link_to "Lessons", lessons_path, class: "btn" %>
+      <%= link_to "Students", students_path, class: "btn" %>
+      <%= link_to "Payments", payments_path, class: "btn" %>
+      <%= link_to "Packages", packages_path, class: "btn" %>
+      <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn") %>
+      <% else %>
+      <%= link_to('Login', new_user_session_path, class: "btn")  %>
+      <% end %>

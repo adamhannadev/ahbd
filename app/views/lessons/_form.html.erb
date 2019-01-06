@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :student_id %>
-    <%= form.collection_select(:student_id, Student.all, :id, :last_name, {:include_blank => "Please select"}, {:class => "ui search select dropdown"}) %>
+    <%= form.collection_select(:student_id, Student.all, :id, :last_name, {:include_blank => "Please select"}, {:class => "dropdown"}) %>
   </div>
 
   <div class="field">
@@ -28,12 +28,12 @@
   
    <div class="field">
     <%= form.label :payment_id %>
-    <%= form.collection_select(:payment_id, Payment.all, :id, :to_s, {:include_blank => "Please select"}, {:class => "ui dropdown item"}) %>
+    <%= form.collection_select(:payment_id, Payment.all, :id, :to_s, {:include_blank => "Please select"}, {:class => "dropdown"}) %>
   </div>
   
   <div class="field">
     <%= form.label :package_id %>
-        <%= form.collection_select(:package_id, Package.where(active: 1), :id, :title, {:include_blank => "Please select"}, {:class => "ui floating search select dropdown"}) %>
+        <%= form.collection_select(:package_id, Package.where(active: 1), :id, :title, {:include_blank => "Please select"}, {:class => "dropdown"}) %>
   </div>
 
   <div class="actions">

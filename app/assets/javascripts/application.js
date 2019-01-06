@@ -14,12 +14,10 @@
 //= require jquery
 //= require rails-ujs
 //= require activestorage
-//= require semantic-ui
 //= require flatpickr
 //= require moment
 //= require fullcalendar
 //= require trumbowyg
-//= require semantic-ui/dist/semantic
 //= require_tree .
 
 $(document).on('turbolinks:before-cache', clearCalendar);

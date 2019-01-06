@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :student_id, "Student" %>
-        <%= form.collection_select(:student_id, Student.all, :id, :last_name, {:prompt => true}, {:class => "ui floating search select dropdown"}) %>
+        <%= form.collection_select(:student_id, Student.all, :id, :last_name, {:prompt => true}, {:class => "dropdown"}) %>
   </div>
 
   <div class="field">

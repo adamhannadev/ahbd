@@ -1,28 +1,20 @@
-<h1>Adam Hanna Ballroom Dance</h1>
-
-<div class="ui statistics">
-  <div class="statistic">
-    <div class="value">
-      <%= Lesson.all.count %>
-    </div>
-    <div class="label">
-      Lessons
-    </div>
-  </div>
-  <div class="statistic">
-    <div class="value">
-      <%= Student.all.count %>
-    </div>
-    <div class="label">
-      Students
-    </div>
-  </div>
-  <div class="statistic">
-    <div class="value">
-      <%= Payment.all.count %>
-    </div>
-    <div class="label">
-      Payments
-    </div>
-  </div>
+<div class="col-container">
+  
+<h1 class="center-h">Adam Hanna Ballroom Dance</h1>
 </div>
+
+<div class="col-container">
+  <div class="col">
+      <%= Lesson.all.count %>
+      Lessons
+  </div>
+  <div class="col">
+    <%= Lesson.all.count %>
+      Lessons
+  </div>
+  <div class="col">
+    <%= Lesson.all.count %>
+      Lessons
+  </div>  
+</div>
+

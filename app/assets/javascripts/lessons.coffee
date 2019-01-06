@@ -10,11 +10,5 @@ $(document).on 'turbolinks:load', ->
     altFormat: "F j, Y, h:iK"
     }
    );
- $('.dropdown')
-    .dropdown({
-     clearable: true,
-     });
- $('.menu .item')
-  .tab();
  $('.editor').trumbowyg({
  });

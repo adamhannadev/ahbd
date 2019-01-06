@@ -10,7 +10,3 @@ $(document).on 'turbolinks:load', ->
     altFormat: "F j, Y"
     }
    );
- $('select.dropdown')
- .dropdown();
- $('.ui.radio.checkbox')
- .checkbox();

@@ -5,32 +5,93 @@
   <title>Adam Hanna Ballroom</title>
   <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+ 
 </head>
-
 <body>
-<br>
+    <!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="/">AHBD</a>
+        </div>
+        <ul class="nav-links">
+      <%= link_to "Dashboard", root_path, class: "btn" %>
+      <%= link_to "Lessons", lessons_path, class: "btn" %>
+      <%= link_to "Students", students_path, class: "btn" %>
+      <%= link_to "Payments", payments_path, class: "btn" %>
+      <%= link_to "Packages", packages_path, class: "btn" %>
+      <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn") %>
+      <% else %>
+      <%= link_to('Login', new_user_session_path, class: "btn")  %>
+      <% end %>
+        </ul>
+        <a class="mobile-menu-toggle display-md-down"></a>
+        <ul class="mobile-menu menu" style="display:none;">
+      <li><%= link_to "Dashboard", root_path, class: "mobile-menu-item" %></li>
+      <li><%= link_to "Lessons", lessons_path, class: "mobile-menu-item" %></li>
+      <li><%= link_to "Students", students_path, class: "mobile-menu-item" %></li>
+      <li><%= link_to "Payments", payments_path, class: "mobile-menu-item" %></li>
+      <li><%= link_to "Packages", packages_path, class: "mobile-menu-item" %></li>
+      <% if user_signed_in? %>
+      <li><%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn") %></li>
+      <% else %>
+      <li><%= link_to('Login', new_user_session_path, class: "btn")  %></li>
+      <% end %>
+        </ul>
+    </div>
+</nav>
 
-  <div class="ui container">
-      <img class="ui left medium image rounded" src="https://adamhannaballroom.dance/wp-content/uploads/2018/12/ahbdLogo2018.png">
-    
-    
-    <% if current_user.try(:admin?) %>
-   <%= render "layouts/partials/admin_menu" %>
-   <% else %>
-    <%= render "layouts/partials/main_menu" %>
-   <% end %>
-        <p class="notice">
-      <%= notice %>
-    </p>
-    <p class="alert">
-      <%= alert %>
-    </p>
-    <%= yield %>
-  </div>
+    <!-- Main Content -->
+    <main>
+        <section class="section">
+            <div class="container">
+<% flash.each do |key, msg| %>
+  <%= content_tag :div, msg, :id => key, :class => 'alert alert-success' %>
+<% end %>
+               <%= yield %>
 
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-5">
+                    <div class="footer-text">
+                        <p class="h3">Footer Example</p>
+                        <p>This is an example of the footer component.  You don't have to use this layout, but it's a good example of what you can do with what's provided.  If you wanted to included more columns for links and remove this text block, you can.</p>
+                    </div>
+                </div>
+                <div class="col col-sm-6 col-lg-3 col-lg-offset-1">
+                    <h4 class="footer-links-category">Links Category 1</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Link #1</a></li>
+                        <li><a href="#">Link #2</a></li>
+                        <li><a href="#">Link #3</a></li>
+                    </ul>
+                </div>
+
+                <div class="col col-sm-6 col-lg-3">
+                    <h4 class="footer-links-category">Links Category 2</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Link #1</a></li>
+                        <li><a href="#">Link #2</a></li>
+                        <li><a href="#">Link #3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <p class="copyright align-center">Created by Adam Hanna Ballroom Dance.</p>
+
+    </footer>  
 </body>
-
 </html>

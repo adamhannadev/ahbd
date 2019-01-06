@@ -1,8 +1,14 @@
 {
   "name": "ahbd",
   "private": true,
+  "scripts": {
+    "css": "node-sass "
+  },
   "dependencies": {
-    "semantic-ui": "^2.4.2",
-    "font-awesome": "^4.7.0"
-  }
+    "animate.css": "^3.7.0",
+    "mustard-ui": "^0.0.8",
+    "node-sass": "^4.11.0",
+    "stimulus": "^1.1.0"
+  },
+  "devDependencies": {}
 }
