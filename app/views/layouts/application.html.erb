@@ -6,6 +6,7 @@
   <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
 
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -14,20 +15,20 @@
 <body>
     <!-- Navigation -->
 <nav>
-    <div class="nav-container">
+    <div class="nav-container" style="padding-top:10px">
         <div class="nav-logo">
-            <a href="/">AHBD</a>
+            
         </div>
         <ul class="nav-links">
-      <%= link_to "Dashboard", root_path, class: "btn" %>
-      <%= link_to "Lessons", lessons_path, class: "btn" %>
-      <%= link_to "Students", students_path, class: "btn" %>
-      <%= link_to "Payments", payments_path, class: "btn" %>
-      <%= link_to "Packages", packages_path, class: "btn" %>
+      <%= link_to "Dashboard", root_path, class: "button" %>
+      <%= link_to "Lessons", lessons_path, class: "button"  %>
+      <%= link_to "Students", students_path, class: "button" %>
+      <%= link_to "Payments", payments_path, class: "button" %>
+      <%= link_to "Packages", packages_path, class: "button" %>
       <% if user_signed_in? %>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn") %>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "button") %>
       <% else %>
-      <%= link_to('Login', new_user_session_path, class: "btn")  %>
+      <%= link_to('Login', new_user_session_path, class: "button")  %>
       <% end %>
         </ul>
         <a class="mobile-menu-toggle display-md-down"></a>

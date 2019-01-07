@@ -1,7 +1,7 @@
 // NAVIGATION
 // ==============================
 
-$nav-bg-color: $color-purple-50 !default;
+$nav-bg-color: $color-white !default;
 $nav-link-color: $color-gray-800 !default;
 $nav-link-active-color: $brand-color !default;
 $nav-menu-toggle-color: $color-gray-800 !default;
@@ -9,7 +9,7 @@ $nav-menu-toggle-color: $color-gray-800 !default;
 nav,
 .nav {
     padding: 0 15px;
-    height: 60px;
+    height: 50px;
     width: 100%;
     background: $nav-bg-color;
 
@@ -55,7 +55,7 @@ nav,
     a {
         display: flex;
         align-items: center;
-        padding: 0 30px;
+        padding: 0 10px;
 
         &:active {
             color: $nav-link-active-color;

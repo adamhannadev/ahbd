@@ -22,9 +22,9 @@
         </div>
     </div>    
         
-       <ul class="card-actions">
-          <li><% if @lesson.is_paid %>Paid: <%= fa_icon 'check' %><% else %>Unpaid: <%= fa_icon 'times' %><% end %></li>
-          <li><% if @lesson.is_planned %>Planned: <%= fa_icon 'check' %><% else %>Unplanned: <%= fa_icon 'times' %><% end %></li>
+       <ul class="card-actions tags">
+          <li class="tag"><% if @lesson.is_paid %>Paid: <%= fa_icon 'check' %><% else %>Unpaid: <%= fa_icon 'times' %><% end %></li>
+          <li class="tag"><% if @lesson.is_planned %>Planned: <%= fa_icon 'check' %><% else %>Unplanned: <%= fa_icon 'times' %><% end %></li>
         </ul>
         <hr/>
     <%= distance_of_time_in_words(@lesson.lesson_date, Time.now) %> <% if @lesson.lesson_date < Date.current %>ago.<% else %>until this lesson.<% end %>

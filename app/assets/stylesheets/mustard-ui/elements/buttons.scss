@@ -1,9 +1,9 @@
 // BUTTONS
 // ==============================
 
-$button-radius: 4px !default;
+$button-radius: 1px !default;
 $button-shadow: false !default;
-$button-text-color: $color-white !default;
+$button-text-color: $color-black !default;
 $button-colors: (
     'primary' : $brand-color,
     'success' : $color-green-500,
@@ -19,13 +19,13 @@ input[type='reset'],
 input[type='submit'] {
     display: inline-block;
     height: 40px;
-    margin: 0 2px 15px;
+    margin: 0 2px 5px;
     padding: 0 20px;
     width: auto;
     background: none;
     overflow: visible;
     appearance: none;
-    transition: all .1s ease-out;
+    transition: none;
 
     font-size: 14px;
     font-weight: 600;
@@ -41,7 +41,7 @@ input[type='submit'] {
     border-width: 1px;
 
     @if $button-shadow {
-        box-shadow: 0 2px 4px rgba($color-gray-500, 0.5);
+        box-shadow: 0 2px 4px rgba($color-gray-500, 0.9);
     }
 
     &:focus {
@@ -52,7 +52,8 @@ input[type='submit'] {
     &:hover {
         opacity: 0.85;
         cursor: pointer;
-        transform: scale(1.025);
+        transform: scale(1);
+        box-shadow: 0 3px 12px rgba($color-gray-500, 0.2);
 
         @if $button-shadow {
             box-shadow: 0 2px 8px rgba($color-gray-600, 0.5);
@@ -68,7 +69,7 @@ input[type='submit'] {
         opacity: 0.5;
 
         &:hover {
-            cursor: not-allowed;
+            cursor: pointer;
         }
     }
 }

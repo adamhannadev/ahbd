@@ -9,7 +9,7 @@ class Package < ApplicationRecord
   end
   
   def title
-   self.student.last_name + ' - ' + self.payment.payment_date.strftime("%m/%d/%Y")
+   self.student.last_name + ' - ' + self.payment.payment_date.strftime("%A, %b. %d")
   end
 
  private

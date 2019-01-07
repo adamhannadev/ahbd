@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-control">
     <%= form.label :student_id %>
-    <%= form.collection_select(:student_id, Student.all, :id, :last_name, {:prompt => true}, {:class => "ui floating search select dropdown"}) %>
+    <%= form.collection_select(:student_id, Student.all, :id, :last_name, {:prompt => true}, {:class => "dropdown"}) %>
   </div>
 
-  <div class="field">
+  <div class="form-control">
     <%= form.label :payment_id %>
-    <%= form.collection_select(:payment_id, Payment.all, :id, :title, {:prompt => true}, {:class => "ui floating search select dropdown"}) %>
+    <%= form.collection_select(:payment_id, Payment.all, :id, :title, {:prompt => true}, {:class => "dropdown"}) %>
   </div>
   
-  <div class="field">
+  <div class="form-control">
     <%= form.label :lessons_purchased %>
     <%= form.text_field :lessons_purchased %>
   </div>
 
-  <div class="actions">
-    <%= form.submit :class=>"ui button" %>
+  <div class="form-control actions">
+    <%= form.submit %>
   </div>
 <% end %>
