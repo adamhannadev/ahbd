@@ -2,7 +2,7 @@ class Package < ApplicationRecord
   belongs_to :student
   belongs_to :payment
   has_many :lessons, dependent: :destroy
-  after_initialize :set_activity
+  after_find :set_activity
   
   def remaining
    return self.lessons_purchased - self.lessons.count
