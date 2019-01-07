@@ -2,13 +2,11 @@
   "name": "ahbd",
   "private": true,
   "scripts": {
-    "css": "node-sass "
   },
   "dependencies": {
     "animate.css": "^3.7.0",
     "mustard-ui": "^0.0.8",
-    "node-sass": "^4.11.0",
-    "stimulus": "^1.1.0"
+    "node-sass": "^4.11.0"
   },
   "devDependencies": {}
 }
