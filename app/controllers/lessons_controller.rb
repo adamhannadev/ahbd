@@ -33,6 +33,8 @@ class LessonsController < ApplicationController
     @query = Lesson.where(:student_id => @lesson.student)
     if @query
     @prevLessonPlan = Lesson.where(:student_id => @lesson.student)[@lesson.id-2].plan;
+  else
+    @prevLessonPlan = ""
     end
   end
 
