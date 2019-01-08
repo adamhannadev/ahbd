@@ -20,11 +20,21 @@
     <%= form.text_field :lesson_date, :class => "dateTime" %>
   </div>
 </div>
+  <div class="form-control-group">
+  <div class="form-control">
+    <div class="card">
+      <h4 class="align-center">Previous Lesson Plan</h4>
+      <%= sanitize @prevLessonPlan %>
+    </div>
+  </div>
   
   <div class="form-control">
     <%= form.label :plan %>
     <%= form.text_area :plan, class: "editor" %>
   </div>
+  
+  </div>
+
   <div class="form-control-group">
      <div class="form-control">
     <%= form.label :payment_id %>

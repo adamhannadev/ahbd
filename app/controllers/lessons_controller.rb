@@ -22,7 +22,6 @@ class LessonsController < ApplicationController
   # GET /lessons/new
   def new
     @lesson = Lesson.new
-    
     respond_to do |format|
     format.html
     format.js
@@ -31,6 +30,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons/1/edit
   def edit
+    @prevLessonPlan = Lesson.where(:student_id => @lesson.student)[@lesson.id-2].plan;
   end
 
   # POST /lessons
