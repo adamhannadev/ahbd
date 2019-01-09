@@ -25,7 +25,7 @@ Rails.application.configure do
     :port => 587,
     :domain => "sandbox03853a1698174e70ab7d8cdbcea6d374.mailgun.org",
     :user_name => "postmaster@sandbox03853a1698174e70ab7d8cdbcea6d374.mailgun.org",
-    :password => "sambarama!123"
+    :password => "sandboxpass"
   }
 
 
