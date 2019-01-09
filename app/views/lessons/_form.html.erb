@@ -22,9 +22,13 @@
 </div>
   <div class="form-control-group">
   <div class="form-control">
-    <div class="card">
-      <h4 class="align-center">Previous Lesson Plan</h4>
-      <%= sanitize @prevLessonPlan %>
+    <div class="card" style="height:83%;">
+      <%if @prevLesson %>
+      <h4 class="align-center">Previous Lesson Plan:<br><%= format_time(@prevLesson.lesson_date)%></h4>
+      <%= sanitize @prevLesson.plan %>
+      <% else %>
+      <h4>No previous Lesson</h4>
+      <% end %>
     </div>
   </div>
   

@@ -94,6 +94,7 @@ GEM
       momentjs-rails (>= 2.9.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hirb (0.7.3)
     i18n (1.2.0)
       concurrent-ruby (~> 1.0)
     ice_cube (0.16.3)
@@ -236,6 +237,7 @@ DEPENDENCIES
   flatpickr_rails
   font-awesome-rails
   fullcalendar-rails
+  hirb
   ice_cube
   jbuilder (~> 2.5)
   jquery-rails
