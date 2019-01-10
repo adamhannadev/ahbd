@@ -30,9 +30,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons/1/edit
   def edit
-    @studentsLessons = Lesson.where(:student_id => @lesson.student_id)
-    @prevLesson = @studentsLessons.where("lesson_date < ?", @lesson.lesson_date).last
-    
+    @prevLesson= Lesson.where(:student_id => @lesson.student_id).where("lesson_date < ?", @lesson.lesson_date).last
   end
 
   # POST /lessons
