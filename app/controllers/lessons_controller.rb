@@ -5,7 +5,7 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = Lesson.all
+    @lessons = Lesson.all.order(lesson_date: :desc)
     # Scope for weekly lessons. 
     # @lessons = Lesson.where(:lesson_date => Date.current.beginning_of_week..Date.current.end_of_week).order(lesson_date: :desc)
   end
@@ -21,6 +21,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons/new
   def new
+    
     @lesson = Lesson.new
     respond_to do |format|
     format.html

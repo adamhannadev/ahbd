@@ -3,6 +3,7 @@ class Package < ApplicationRecord
   belongs_to :payment
   has_many :lessons, dependent: :destroy
   after_find :set_activity
+  scope :activity, ->(status){ where(active: status) }
   
   def remaining
    return self.lessons_purchased - self.lessons.count
