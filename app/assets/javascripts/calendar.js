@@ -1,7 +1,7 @@
 function eventCalendar() {
   return $('#calendar').fullCalendar({
     header: {
-      left: 'prev,next today',
+      left: 'prev,next',
       center: 'title',
       right: 'month, agendaWeek, agendaDay'
     },
@@ -15,6 +15,7 @@ function eventCalendar() {
     minTime: "09:30:00",
     maxTime: "22:00:00",
     timeFormat: "h:mma",
+    themeSystem: "bootstrap4",
     businessHours: [ // specify an array instead
       {
         dow: [2, 3, 5], // Monday, Tuesday, Wednesday

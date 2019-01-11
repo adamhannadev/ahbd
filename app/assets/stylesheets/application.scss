@@ -14,10 +14,9 @@
  *= require flatpickr
  *= require fullcalendar
  *= require trumbowyg
- *= require mustard-ui/mustard-ui 
  *= require app
  *= require animate.min
  */
- 
+ @import "bootstrap";
  @import "font-awesome";
-@import url('https://fonts.googleapis.com/css?family=Great+Vibes|Raleway');
+ @import url('https://fonts.googleapis.com/css?family=Great+Vibes|Raleway');

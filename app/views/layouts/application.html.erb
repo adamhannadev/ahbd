@@ -1,98 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <title>Adam Hanna Ballroom</title>
-  <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <title><%= content_for?(:title) ? yield(:title) : "Adam Hanna Ballroom Dance" %></title>
 
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
- 
-</head>
-<body>
-    <!-- Navigation -->
-<nav>
-    <div class="nav-container" style="padding-top:10px">
-        <div class="nav-logo">
-            
-        </div>
-        <ul class="nav-links">
-      <%= link_to "Dashboard", root_path, class: "button" %>
-      <%= link_to "Lessons", lessons_path, class: "button"  %>
-      <%= link_to "Students", students_path, class: "button" %>
-      <%= link_to "Payments", payments_path, class: "button" %>
-      <%= link_to "Packages", packages_path, class: "button" %>
-      <% if user_signed_in? %>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "button") %>
-      <% else %>
-      <%= link_to('Login', new_user_session_path, class: "button")  %>
-      <% end %>
-        </ul>
-        <a class="mobile-menu-toggle display-md-down"></a>
-        <ul class="mobile-menu menu display-md-down">
-      <li><%= link_to "Dashboard", root_path, class: "mobile-menu-item" %></li>
-      <li><%= link_to "Lessons", lessons_path, class: "mobile-menu-item" %></li>
-      <li><%= link_to "Students", students_path, class: "mobile-menu-item" %></li>
-      <li><%= link_to "Payments", payments_path, class: "mobile-menu-item" %></li>
-      <li><%= link_to "Packages", packages_path, class: "mobile-menu-item" %></li>
-      <% if user_signed_in? %>
-      <li><%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn") %></li>
-      <% else %>
-      <li><%= link_to('Login', new_user_session_path, class: "btn")  %></li>
-      <% end %>
-        </ul>
-    </div>
-</nav>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-    <!-- Main Content -->
-    <main>
-        <section class="section">
-            <div class="container">
-<% flash.each do |key, msg| %>
-  <%= content_tag :div, msg, :id => key, :class => 'alert alert-success' %>
-<% end %>
-               <%= yield %>
-
-            </div>
+  <body>
+        
+        <section class="container-fluid">
+            <%= render partial: '/layouts/partials/admin_menu' %>
+            <%= yield %>
         </section>
+    
 
-    </main>
-
-    <!-- Footer -->
-    <footer class="display-md-up">
-        <div class="container">
-            <div class="row">
-                <div class="col col-lg-5">
-                    <div class="footer-text">
-                        
-                        <%= image_tag 'logo.png' %>
-                    </div>
-                </div>
-                <div class="col col-sm-6 col-lg-3 col-lg-offset-1">
-                    <h4 class="footer-links-category">Links Category 1</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Link #1</a></li>
-                        <li><a href="#">Link #2</a></li>
-                        <li><a href="#">Link #3</a></li>
-                    </ul>
-                </div>
-
-                <div class="col col-sm-6 col-lg-3">
-                    <h4 class="footer-links-category">Links Category 2</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Link #1</a></li>
-                        <li><a href="#">Link #2</a></li>
-                        <li><a href="#">Link #3</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <p class="copyright align-center">Created by Adam Hanna Ballroom Dance.</p>
-
-    </footer>  
-</body>
+  </body>
 </html>

@@ -11,13 +11,16 @@
 // about supported directives.
 //
 //= require turbolinks
-//= require jquery
+//= require jquery3
 //= require rails-ujs
 //= require activestorage
 //= require flatpickr
 //= require moment
 //= require fullcalendar
 //= require trumbowyg
+//= require popper
+//= require bootstrap
 //= require_tree .
 
 $(document).on('turbolinks:before-cache', clearCalendar);
+$(function(){ $(document).foundation(); });

@@ -1,8 +1,7 @@
 {
   "name": "ahbd",
   "private": true,
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
     "animate.css": "^3.7.0",
     "mustard-ui": "^0.0.8",
