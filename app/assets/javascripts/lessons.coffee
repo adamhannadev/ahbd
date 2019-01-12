@@ -12,3 +12,17 @@ $(document).on 'turbolinks:load', ->
    );
  $('.editor').trumbowyg({
  });
+ 
+ $('.ui.search')
+  .search({
+    apiSettings: {
+      url: '/packages/'
+    },
+    fields: {
+      results : 'packages',
+      title   : 'id',
+      url     : 'html_url'
+    },
+    minCharacters : 3
+  })
+;

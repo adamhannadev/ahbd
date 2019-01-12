@@ -5,7 +5,8 @@
   "dependencies": {
     "animate.css": "^3.7.0",
     "mustard-ui": "^0.0.8",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.11.0",
+    "spectre.css": "^0.5.8"
   },
   "devDependencies": {}
 }

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title><%= content_for?(:title) ? yield(:title) : "Adam Hanna Ballroom Dance" %></title>
 
@@ -12,12 +12,20 @@
   </head>
 
   <body>
-        
-        <section class="container-fluid">
-            <%= render partial: '/layouts/partials/admin_menu' %>
-            <%= yield %>
-        </section>
-    
+  <div class="ui sidebar inverted vertical menu">
+<%= render partial: 'layouts/partials/admin_menu' %>
+  </div>
+  <div class="pusher">
+    <button style="margin-top:1em;margin-left:1em;" class="ui button" id="menu"><i class="angle double left icon"></i></button>
+     <div class="ui container">
+    <%= yield %>
+  </div>
 
+  </div>
+
+
+
+
+   
   </body>
 </html>

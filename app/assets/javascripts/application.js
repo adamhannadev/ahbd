@@ -18,9 +18,7 @@
 //= require moment
 //= require fullcalendar
 //= require trumbowyg
-//= require popper
-//= require bootstrap
+//= require semantic-ui
 //= require_tree .
 
 $(document).on('turbolinks:before-cache', clearCalendar);
-$(function(){ $(document).foundation(); });
