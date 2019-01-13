@@ -1,6 +1,6 @@
 class Student < ApplicationRecord
     has_many :packages
-    
+    has_many :routines
     def to_s
      return self.first_name + " " + self.last_name
     end
