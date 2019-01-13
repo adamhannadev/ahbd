@@ -13,12 +13,7 @@
 <div class="four fields">
     <div class="field">
     <%= form.label :student_id %>
-    <% form.collection_select(:student_id, Student.all.order(:last_name), :id, :last_name, {:include_blank => "Please select"}, {:class => ""}) %>
-    <div class="ui search">
-  <input class="prompt" type="text" placeholder="Student" id="<%= @student %>">
-  <div class="results"></div>
-</div>
-  </div>
+    <%= form.collection_select(:student_id, Student.all.order(:last_name), :id, :last_name, {:include_blank => "Please select"}, {:class => ""}) %>
 
   <div class="field">
     <%= form.label :level %>
