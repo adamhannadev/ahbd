@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_13_023410) do
+ActiveRecord::Schema.define(version: 2019_01_13_193609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dances", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_dances_on_category_id"
+  end
+
+  create_table "figures", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "level_id"
+    t.bigint "dance_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dance_id"], name: "index_figures_on_dance_id"
+    t.index ["level_id"], name: "index_figures_on_level_id"
+  end
 
   create_table "lessons", force: :cascade do |t|
     t.bigint "student_id"
@@ -28,6 +55,13 @@ ActiveRecord::Schema.define(version: 2019_01_13_023410) do
     t.index ["package_id"], name: "index_lessons_on_package_id"
     t.index ["payment_id"], name: "index_lessons_on_payment_id"
     t.index ["student_id"], name: "index_lessons_on_student_id"
+  end
+
+  create_table "levels", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "packages", force: :cascade do |t|
@@ -87,6 +121,9 @@ ActiveRecord::Schema.define(version: 2019_01_13_023410) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "dances", "categories"
+  add_foreign_key "figures", "dances"
+  add_foreign_key "figures", "levels"
   add_foreign_key "lessons", "packages"
   add_foreign_key "lessons", "payments"
   add_foreign_key "lessons", "students"

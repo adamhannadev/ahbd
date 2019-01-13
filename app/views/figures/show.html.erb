@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @figure.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @figure.description %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @figure.level %>
+</p>
+
+<p>
+  <strong>Dance:</strong>
+  <%= @figure.dance %>
+</p>
+
+<%= link_to 'Edit', edit_figure_path(@figure) %> |
+<%= link_to 'Back', figures_path %>

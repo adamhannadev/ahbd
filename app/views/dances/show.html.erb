@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @dance.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @dance.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @dance.category %>
+</p>
+
+<%= link_to 'Edit', edit_dance_path(@dance) %> |
+<%= link_to 'Back', dances_path %>
