@@ -12,11 +12,14 @@
   </head>
 
   <body>
-  <div class="ui sidebar inverted vertical menu">
+    <div class="mobile hidden">
 <%= render partial: 'layouts/partials/admin_menu' %>
+</div>
+  <div class="ui sidebar inverted vertical menu">
+<%= render partial: 'layouts/partials/sidebar' %>
   </div>
   <div class="pusher">
-    <button style="border-radius:0px;" class="ui icon button" id="menu"><i class="bars icon button"></i></button>
+    <button style="border-radius:0px;" class="ui icon button mobile only" id="menu"><i class="bars icon button"></i></button>
      <div class="ui container">
     <%= yield %>
   </div>
