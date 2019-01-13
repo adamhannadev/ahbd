@@ -1,6 +1,6 @@
 class LevelsController < ApplicationController
   before_action :set_level, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, :ensure_admin!
   # GET /levels
   # GET /levels.json
   def index

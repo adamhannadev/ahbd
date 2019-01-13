@@ -1,6 +1,6 @@
 class FiguresController < ApplicationController
   before_action :set_figure, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, :ensure_admin!
   # GET /figures
   # GET /figures.json
   def index

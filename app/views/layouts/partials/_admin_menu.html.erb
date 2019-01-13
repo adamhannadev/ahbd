@@ -1,6 +1,6 @@
 
 
-<div class="ui top seven item attached menu">
+<div class="ui top twelve item attached menu">
   
    <%= link_to "Dashboard", root_path, class: "item" %> 
          <%= link_to "Lessons", lessons_path, class: "item" %>
@@ -13,5 +13,15 @@
       <% else %>
       <%= link_to('Login', new_user_session_path, class: "item")  %>
       <% end %>
+       <div class="ui simple dropdown item">
+    Syllabus Admin
+    <i class="dropdown icon"></i>
+    <div class="menu">
+      <%= link_to "Levels", levels_path, class: "item" %>
+     <%= link_to "Categories", categories_path, class: "item" %>
+     <%= link_to "Dances", dances_path, class: "item" %>
+     <%= link_to "Figures", figures_path, class: "item" %>
+    </div>
+  </div>
 </div>
       
