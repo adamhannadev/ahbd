@@ -1,35 +1,19 @@
-    <div class="card">
-        <h3 class="card-title row">
-           <div class="col col-sm-4">
-           <%= @lesson.student.first_name + ' ' + @lesson.student.last_name %>
-           </div>
-           <div class="col col-sm-4 col-sm-offset-4">
-               
-            <%= @lesson.lesson_date.strftime("%A, %b. %d - %I:%M%p") %>
-           </div>
-        </h3>
-    <div class="row">
-        <div class="col col-sm-2">
-            
-        </div>
-        <div class="col col-sm-8">
-            <div class="container-small">
-       <%= sanitize @lesson.plan %>
-        </div>
-        </div>
-        <div class="col col-sm-2">
-            
-        </div>
-    </div>    
-        
-       <ul class="card-actions tags">
-          <li class="tag"><% if @lesson.is_paid %>Paid: <%= fa_icon 'check' %><% else %>Unpaid: <%= fa_icon 'times' %><% end %></li>
-          <li class="tag"><% if @lesson.is_planned %>Planned: <%= fa_icon 'check' %><% else %>Unplanned: <%= fa_icon 'times' %><% end %></li>
-        </ul>
-        <hr/>
-    <%= distance_of_time_in_words(@lesson.lesson_date, Time.now) %> <% if @lesson.lesson_date < Date.current %>ago.<% else %>until this lesson.<% end %>
-      </div>
 
+<div class="ui card fluid">
+  <div class="content">
+    <div class="header"><h2> <%= @lesson.student.first_name + ' ' + @lesson.student.last_name %></h2></div>
+    <div class="meta"><h4><%= @lesson.lesson_date.strftime("%A, %b. %d - %I:%M%p") %></h4></div>
+    <div class="description">
+         <h2 class="centered">Plan</h2>
+       <%= sanitize @lesson.plan %>
+    </div>
+  </div>
+  <div class="extra content">
+    <%= distance_of_time_in_words(@lesson.lesson_date, Time.now) %> <% if @lesson.lesson_date < Date.current %>ago.<% else %>until this lesson.<% end %>
+     <p class="pull-right"><% if @lesson.is_paid %>Paid: <%= fa_icon 'check' %><% else %>Unpaid: <%= fa_icon 'times' %><% end %>
+     <% if @lesson.is_planned %>Planned: <%= fa_icon 'check' %><% else %>Unplanned: <%= fa_icon 'times' %><% end %></p>
+  </div>
+</div>
 <%= link_to 'Back', lessons_path %> |
 <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
 <%= link_to 'Calendar', calendar_path %>

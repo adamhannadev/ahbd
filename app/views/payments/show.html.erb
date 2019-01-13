@@ -1,29 +1,21 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Student:</strong>
-  <%= @payment.student %>
-</p>
+<div class="ui card fluid">
+  <div class="content">
+    <div class="header center aligned"><h2><%= @payment.student.last_name %> - #<%= @payment.id %></h2></div>
+    <div class="meta"><h4><%= @payment.payment_date %></h4></div>
+    <div class="description">
+         <h2 class="centered">Details</h2>
+<h3>Type: <%= @payment.payment_type %></h3>
+<h3>Amount:  <%= number_to_currency @payment.amount %></h3>
+<h3>Account: <%= @payment.account %></h3>
+    </div>
+  </div>
+  <div class="extra content">
+    
+  </div>
+</div> 
+  
 
-<p>
-  <strong>Payment date:</strong>
-  <%= @payment.payment_date %>
-</p>
-
-<p>
-  <strong>Payment type:</strong>
-  <%= @payment.payment_type %>
-</p>
-
-<p>
-  <strong>Amount:</strong>
-  <%= @payment.amount %>
-</p>
-
-<p>
-  <strong>Account:</strong>
-  <%= @payment.account %>
-</p>
 
 <%= link_to 'Edit', edit_payment_path(@payment) %> |
 <%= link_to 'Back', payments_path %>

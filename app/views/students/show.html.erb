@@ -1,28 +1,18 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @student.last_name %>
-</p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @student.first_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @student.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @student.phone %>
-</p>
-<p>
-  <strong>Lessons Remaining:</strong>
-  <%= @student.lessons_remaining %>
-</p>
+<div class="ui card fluid">
+  <div class="content">
+    <div class="header center aligned"><h2><%= @student.first_name %> <%= @student.last_name %></h2></div>
+    <div class="meta"><h4></h4></div>
+    <div class="description">
+        <h3 class="col col-sm-4">Email: <%= @student.email %></h3>
+              <h3 class="col col-sm-4">Phone: <%= @student.phone %></h3>
+    </div>
+  </div>
+  <div class="extra content">
+    <%= @student.lessons_remaining %> lessons remaining.
+   
+  </div>
+</div> 
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
