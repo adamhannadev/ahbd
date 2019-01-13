@@ -14,7 +14,7 @@
     <div class="field">
     <%= form.label :student_id %>
     <%= form.collection_select(:student_id, Student.all.order(:last_name), :id, :last_name, {:include_blank => "Please select"}, {:class => ""}) %>
-
+</div>
   <div class="field">
     <%= form.label :level %>
     <%= form.text_field :level %>
