@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :routines
   resources :packages
   resources :payments
   resources :lessons

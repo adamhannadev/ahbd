@@ -4,9 +4,8 @@
   "scripts": {},
   "dependencies": {
     "animate.css": "^3.7.0",
-    "mustard-ui": "^0.0.8",
     "node-sass": "^4.11.0",
-    "spectre.css": "^0.5.8"
+    "semantic-ui-sass": "^2.3.1"
   },
   "devDependencies": {}
 }

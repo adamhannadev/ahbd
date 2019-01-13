@@ -4,6 +4,7 @@
          <%= link_to "Students", students_path, class: "item" %>
          <%= link_to "Payments", payments_path, class: "item" %>
          <%= link_to "Packages", packages_path, class: "item" %>
+          <%= link_to "Routines", routines_path, class: "item" %>
      <% if user_signed_in? %>
       <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "item") %>
       <% else %>
