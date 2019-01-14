@@ -966,11 +966,6 @@ scss-tokenizer@^0.2.3:
     js-base64 "^2.1.8"
     source-map "^0.4.2"
 
-semantic-ui-sass@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/semantic-ui-sass/-/semantic-ui-sass-2.3.1.tgz#1d283fab14a9ebb4a6277b2c9acb5affe51c0a27"
-  integrity sha512-iNM2viANlpGzkSkOy11R+Ar7mhInXc2wwkoxON86FcabF+dBdvDMzPXSDGbhTVitHZFoBrK/QCKaZtvpfKQ4ag==
-
 "semver@2 || 3 || 4 || 5":
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.6.0.tgz#7e74256fbaa49c75aa7c7a205cc22799cac80004"
