@@ -18,7 +18,7 @@
 //= require moment
 //= require fullcalendar
 //= require trumbowyg
-//= require semantic-ui
+//= require dist/semantic.min
 //= require_tree .
 
 $(document).on('turbolinks:before-cache', clearCalendar);
