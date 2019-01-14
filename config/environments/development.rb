@@ -1,5 +1,6 @@
 Rails.application.configure do
-
+  
+  config.generators.javascript_engine = :js
   # Verifies that versions and hashed value of the package contents in the project's package.json
 
   # Settings specified here will take precedence over those in config/application.rb.
