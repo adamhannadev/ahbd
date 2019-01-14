@@ -5,7 +5,7 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = Lesson.all.order(lesson_date: :desc)
+    @lessons = Lesson.this_years_lessons.order(lesson_date: :desc)
     # Scope for weekly lessons. 
     # @lessons = Lesson.where(:lesson_date => Date.current.beginning_of_week..Date.current.end_of_week).order(lesson_date: :desc)
   end

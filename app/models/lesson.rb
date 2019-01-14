@@ -4,6 +4,7 @@ class Lesson < ApplicationRecord
   has_one :payment
   before_save :set_status
   validates :lesson_date, presence: true
+  scope :this_years_lessons, -> { where('lesson_date > ?', Date.current.beginning_of_year) }
   
     def end_date
         self.lesson_date  + 60*60

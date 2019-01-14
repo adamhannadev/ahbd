@@ -35,8 +35,6 @@ gem 'fullcalendar-rails'
 gem 'font-awesome-rails'
 gem 'hirb'
 
-
-
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 # Use Capistrano for deployment
