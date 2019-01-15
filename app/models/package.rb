@@ -15,9 +15,9 @@ class Package < ApplicationRecord
  private
  def set_activity
   if self.lessons.count >= self.lessons_purchased
-    self.active = '0'
+    self.active = 'inactive'
   else
-    self.active = '1'
+    self.active = 'active'
   end
  end
 

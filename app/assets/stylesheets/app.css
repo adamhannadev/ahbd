@@ -14,3 +14,19 @@
     margin: 5em 0em 0em;
     padding: 5em 0em;
   }
+  
+  #menu{
+    display:none;
+  }
+  @media screen and (max-width: 700px) {
+  .desktop-only{
+    visibility: hidden;
+    display: none;
+  }
+  #menu{
+   display:block;
+  }
+  
+}
+
+
