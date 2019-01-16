@@ -2,6 +2,7 @@ class Package < ApplicationRecord
   belongs_to :student
   belongs_to :payment
   has_many :lessons, dependent: :destroy
+   enum status: [ :active, :inactive ]
   after_find :set_activity
   
   def remaining
@@ -12,15 +13,12 @@ class Package < ApplicationRecord
    self.student.last_name + ' - ' + self.payment.payment_date.strftime("%A, %b. %d")
   end
 
- private
- def set_activity
-  if self.lessons.count >= self.lessons_purchased
-      puts "Setting to inactive"
-    self.active = "inactive"
-  else
-      puts "Setting to active"
-    self.active = "active"
-  end
- end
+    def set_activity
+    if self.lessons_purchased > self.lessons.count
+        self.active!
+     else
+         self.inactive!
+    end
+    end
 
 end
