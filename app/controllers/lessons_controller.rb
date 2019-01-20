@@ -5,13 +5,15 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = Lesson.this_years_lessons.order(lesson_date: :desc)
+    @lessons = Lesson.all
+    # @lessons = Lesson.this_years_lessons.order(lesson_date: :desc)
     # Scope for weekly lessons. 
     # @lessons = Lesson.where(:lesson_date => Date.current.beginning_of_week..Date.current.end_of_week).order(lesson_date: :desc)
   end
   
   def calendar
     @lessons = Lesson.all
+    @recurring_lessons = @lessons.flat_map{|e| e.recurring_lessons(params.fetch(:start_time, Time.zone.now).to_date)}
   end
   
   # GET /lessons/1
@@ -22,7 +24,7 @@ class LessonsController < ApplicationController
   # GET /lessons/new
   def new
     
-    @lesson = Lesson.new
+    @lesson = Lesson.new(:student_id => params[:student_id], :lesson_date => params[:lesson_date])
     respond_to do |format|
     format.html
     format.js
@@ -38,7 +40,7 @@ class LessonsController < ApplicationController
   # POST /lessons
   # POST /lessons.json
   def create
-    @lesson = Lesson.new(lesson_params)
+    @lesson = Lesson.new
 
     respond_to do |format|
       if @lesson.save
@@ -83,6 +85,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:student_id, :lesson_date, :plan, :package_id, :payment_id)
+      params.require(:lesson).permit(:student_id, :lesson_date, :plan, :package_id, :payment_id, :recurring)
     end
 end

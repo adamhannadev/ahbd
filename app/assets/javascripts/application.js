@@ -19,6 +19,7 @@
 //= require fullcalendar
 //= require trumbowyg
 //= require dist/semantic.min
+//= require recurring_select
 //= require_tree .
 
 $(document).on('turbolinks:before-cache', clearCalendar);

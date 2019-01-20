@@ -29,12 +29,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'flatpickr_rails'
 gem 'jquery-rails'
-gem 'ice_cube'
 gem 'momentjs-rails'
 gem 'fullcalendar-rails'
 gem 'font-awesome-rails'
 gem 'hirb'
-
+gem 'recurring_select'
+gem 'simple_calendar'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 # Use Capistrano for deployment

@@ -1,1 +1,8 @@
-<div id="calendar" style="margin-top:1em;"></div>
+<%= month_calendar events: @recurring_lessons do |date, lessons| %>
+  <%= date.day %><br>
+  <% lessons.each do |l| %>
+  <% if Lesson.where("lesson_date == ?", date) %>
+      <%= link_to l.student.last_name, new_lesson_path(:student_id => l.student, :lesson_date => l.lesson_date) %>
+      <% end %>
+  <% end %>
+<% end %>

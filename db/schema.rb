@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_16_061455) do
+ActiveRecord::Schema.define(version: 2019_01_18_003824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_01_16_061455) do
     t.bigint "payment_id"
     t.boolean "is_paid"
     t.boolean "is_planned"
+    t.string "recurring"
     t.index ["package_id"], name: "index_lessons_on_package_id"
     t.index ["payment_id"], name: "index_lessons_on_payment_id"
     t.index ["student_id"], name: "index_lessons_on_student_id"

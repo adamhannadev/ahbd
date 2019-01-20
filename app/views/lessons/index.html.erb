@@ -8,6 +8,7 @@
       <th>Lesson Date</th>
       <th>Paid</th>
       <th>Planned</th>
+      <th>Recurring</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -27,6 +28,7 @@
         <td>
           <% if lesson.is_planned %><%= fa_icon "check" %><% end %>
         </td>
+        <td><%= lesson.recurring %></td>
         <td>
           <%= link_to 'Show', lesson %>
         </td>

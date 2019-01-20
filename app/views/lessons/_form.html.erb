@@ -14,7 +14,7 @@
 <div class="two fields">
   <div class="field">
        <%= form.label :student_id%>
-        <%= form.collection_select(:student_id, Student.all.order(:last_name), :id, :last_name, {:include_blank => "Please select"}, {:class => "ui search dropdown"}) %>
+        <%= form.collection_select(:student_id, Student.all.order(:last_name), :id, :last_name, {:selected => @lesson.student_id, :include_blank => "Please select"}, {:class => "ui search dropdown"}) %>
     </div>
 
     <div class="field">
@@ -60,6 +60,10 @@
         <%= form.collection_select(:package_id, Package.where(status: :active), :id, :title, {:include_blank => "Please select"}, {:class => "ui search dropdown"}) %>
       
     </div>
+</div>
+<div class="field">
+    <%= form.label :recurring %>
+    <%= form.select_recurring :recurring, nil, :allow_blank => true %>
 </div>
    
      <%= form.submit :class => 'ui button' %>
