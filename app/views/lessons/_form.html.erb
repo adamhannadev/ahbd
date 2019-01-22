@@ -10,16 +10,15 @@
       </ul>
     </div>
   <% end %>
-
 <div class="two fields">
   <div class="field">
-       <%= form.label :student_id%>
-        <%= form.collection_select(:student_id, Student.all.order(:last_name), :id, :last_name, {:selected => @lesson.student_id, :include_blank => "Please select"}, {:class => "ui search dropdown"}) %>
+       <%= form.label :student_id %>
+        <%= form.collection_select(:student_id, Student.all.order(:last_name), :id, :last_name, {selected: lesson.student_id || params['student'], :include_blank => "Please select"}, {:class => "ui search dropdown"}) %>
     </div>
 
     <div class="field">
         <%= form.label :lesson_date, 'Lesson Date'%>
-    <%= form.text_field :lesson_date, :class => "dateTime form-input" %>
+    <%= form.text_field :lesson_date, :class => "dateTime form-input", value: lesson.lesson_date || params['lesson_date'] %>
     </div>
 </div>
     

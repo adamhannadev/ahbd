@@ -1,8 +1,16 @@
-<%= month_calendar events: @recurring_lessons do |date, lessons| %>
+<%= month_calendar events:  @recurring_lessons do |date, lessons| %>
   <%= date.day %><br>
   <% lessons.each do |l| %>
-  <% if Lesson.where("lesson_date == ?", date) %>
-      <%= link_to l.student.last_name, new_lesson_path(:student_id => l.student, :lesson_date => l.lesson_date) %>
-      <% end %>
-  <% end %>
+  <% if l.created_at.blank? %>
+<%= link_to l.id, new_lesson_path(:student => l.student.id, :lesson_date => l.lesson_date), {:style=>'color:green;'}%><br>
+ <% else %>
+ 
+<%= link_to l.id, edit_lesson_path(:id => l.id), {:style=>'color:blue'} %><br>
 <% end %>
+
+<% end %>
+
+  <% end %>
+
+
+<%= @recurring_lessons %>

@@ -13,7 +13,7 @@ class LessonsController < ApplicationController
   
   def calendar
     @lessons = Lesson.all
-    @recurring_lessons = @lessons.flat_map{|e| e.recurring_lessons(params.fetch(:start_time, Time.zone.now).to_date)}
+    @recurring_lessons = Lesson.all.flat_map{|e| e.recurring_lessons(params.fetch(:start_time, Time.zone.now).to_date)}
   end
   
   # GET /lessons/1
@@ -23,8 +23,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons/new
   def new
-    
-    @lesson = Lesson.new(:student_id => params[:student_id], :lesson_date => params[:lesson_date])
+    @lesson = Lesson.new()
     respond_to do |format|
     format.html
     format.js
@@ -40,8 +39,7 @@ class LessonsController < ApplicationController
   # POST /lessons
   # POST /lessons.json
   def create
-    @lesson = Lesson.new
-
+    @lesson = Lesson.new(lesson_params)
     respond_to do |format|
       if @lesson.save
         format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
