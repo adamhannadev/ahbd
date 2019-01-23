@@ -1,0 +1,1 @@
+Date::DATE_FORMATS[:some_format] = "%B %e, %Y" # January 28, 2015

@@ -2,15 +2,12 @@
   <%= date.day %><br>
   <% lessons.each do |l| %>
   <% if l.created_at.blank? %>
-<%= link_to l.id, new_lesson_path(:student => l.student.id, :lesson_date => l.lesson_date), {:style=>'color:green;'}%><br>
+<%= link_to "#{l.student.last_name} #{l.lesson_date.strftime("- %I:%M%p")}", new_lesson_path(:student => l.student.id, :lesson_date => l.lesson_date), {:style=>'color:green;'}%><br>
  <% else %>
  
-<%= link_to l.id, edit_lesson_path(:id => l.id), {:style=>'color:blue'} %><br>
+<%= link_to "#{l.student.last_name} #{l.lesson_date.strftime("- %I:%M%p")}", edit_lesson_path(:id => l.id), {:style=>'color:blue'} %><br>
 <% end %>
 
 <% end %>
 
   <% end %>
-
-
-<%= @recurring_lessons %>
