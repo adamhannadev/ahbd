@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_18_003824) do
+ActiveRecord::Schema.define(version: 2019_01_26_151733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 2019_01_18_003824) do
     t.index ["category_id"], name: "index_dances_on_category_id"
   end
 
+  create_table "events", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string "bookable_type"
+    t.bigint "bookable_id"
+    t.string "recurring"
+    t.index ["bookable_type", "bookable_id"], name: "index_events_on_bookable_type_and_bookable_id"
+  end
+
   create_table "figures", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -44,7 +55,7 @@ ActiveRecord::Schema.define(version: 2019_01_18_003824) do
 
   create_table "lessons", force: :cascade do |t|
     t.bigint "student_id"
-    t.datetime "lesson_date"
+    t.datetime "start_time"
     t.text "plan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -52,7 +63,6 @@ ActiveRecord::Schema.define(version: 2019_01_18_003824) do
     t.bigint "payment_id"
     t.boolean "is_paid"
     t.boolean "is_planned"
-    t.string "recurring"
     t.index ["package_id"], name: "index_lessons_on_package_id"
     t.index ["payment_id"], name: "index_lessons_on_payment_id"
     t.index ["student_id"], name: "index_lessons_on_student_id"

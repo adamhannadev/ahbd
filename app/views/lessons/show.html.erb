@@ -2,14 +2,14 @@
 <div class="ui card fluid">
   <div class="content">
     <div class="header"><h2> <%= @lesson.student.first_name + ' ' + @lesson.student.last_name %></h2></div>
-    <div class="meta"><h4><%= @lesson.lesson_date.strftime("%A, %b. %d - %I:%M%p") %></h4></div>
+    <div class="meta"><h4><%= @lesson.start_time.strftime("%A, %b. %d - %I:%M%p") %></h4></div>
     <div class="description">
          <h2 class="centered">Plan</h2>
        <%= sanitize @lesson.plan %>
     </div>
   </div>
   <div class="extra content">
-    <%= distance_of_time_in_words(@lesson.lesson_date, Time.now) %> <% if @lesson.lesson_date < Date.current %>ago.<% else %>until this lesson.<% end %>
+    <%= distance_of_time_in_words(@lesson.start_time, Time.now) %> <% if @lesson.start_time < Date.current %>ago.<% else %>until this lesson.<% end %>
      <p class="pull-right"><% if @lesson.is_paid %>Paid: <%= fa_icon 'check' %><% else %>Unpaid: <%= fa_icon 'times' %><% end %>
      <% if @lesson.is_planned %>Planned: <%= fa_icon 'check' %><% else %>Unplanned: <%= fa_icon 'times' %><% end %></p>
   </div>

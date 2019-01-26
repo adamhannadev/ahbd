@@ -1,0 +1,9 @@
+<%= week_calendar events: @events do |date, event| %>
+  <%= date.day %>
+  <% event.each do |e| %>
+  <% @type = e.bookable_type.constantize %>
+  <%= @type.find(e.bookable_id).student.last_name %>
+  <%= @type.find(e.bookable_id).start_time %>
+  <% end %>
+  <% end %>
+  

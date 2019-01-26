@@ -17,8 +17,8 @@
     </div>
 
     <div class="field">
-        <%= form.label :lesson_date, 'Lesson Date'%>
-    <%= form.text_field :lesson_date, :class => "dateTime form-input", value: lesson.lesson_date || params['lesson_date'] %>
+        <%= form.label :start_time, 'Lesson Date'%>
+    <%= form.text_field :start_time, :class => "dateTime form-input", value: lesson.start_time || params['start_time'] %>
     </div>
 </div>
     
@@ -26,7 +26,7 @@
        <div class="field">
       
       <%if @prevLesson %>
-<%= format_time(@prevLesson.lesson_date)%>
+<%= format_time(@prevLesson.start_time)%>
  
     <%= sanitize @prevLesson.plan %>
 <%= link_to "Edit", edit_lesson_path(@prevLesson), class: "button" %>
@@ -60,10 +60,7 @@
       
     </div>
 </div>
-<div class="field">
-    <%= form.label :recurring %>
-    <%= form.select_recurring :recurring, nil, :allow_blank => true %>
-</div>
+
    
      <%= form.submit :class => 'ui button' %>
 </div>
