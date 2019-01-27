@@ -5,7 +5,7 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = Lesson.all
+    @lessons = Lesson.all.order(start_time: :desc)
     # @lessons = Lesson.this_years_lessons.order(start_time: :desc)
     # Scope for weekly lessons. 
     
