@@ -20,6 +20,7 @@
 //= require trumbowyg
 //= require dist/semantic.min
 //= require recurring_select
+//= require tablesort
 //= require_tree .
 
 $(document).on('turbolinks:before-cache', clearCalendar);

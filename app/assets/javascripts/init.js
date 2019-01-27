@@ -1,5 +1,5 @@
 App.init = function() {
-
+$('table').tablesort();
 }
 
 $(document).on('turbolinks:load', function () {
@@ -8,6 +8,8 @@ $(document).on('turbolinks:load', function () {
   initAnimateCss();
   
   $('select.dropdown')
-  .dropdown({clearable: true})
-;
+  .dropdown({clearable: true});
+  
+  
+  
 });
