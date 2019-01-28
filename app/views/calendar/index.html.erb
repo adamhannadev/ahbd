@@ -1,3 +1,5 @@
+    <% @beginning_of_month = Date.current.beginning_of_month %>
+  <% @end_of_month = Date.current.end_of_month %>
 <table class="ui celled table">
     <thead>
         <tr>
@@ -7,8 +9,7 @@
    <th>Saturday</th>
   </tr>
   <tr>
-  <% @beginning_of_month = Date.current.beginning_of_month %>
-  <% @end_of_month = Date.current.end_of_month %>
+
 
 <% (@beginning_of_month..@end_of_month).each do |d| %>
 <% if d == @beginning_of_month %>
@@ -16,9 +17,9 @@
 <% end %>
 
 <% if d.wday == 0 %> </tr><tr><% end %>
-<td> <div class="datenum"><%= d.day %></div><br>
+<td style="position:relative;padding-top:25px;height:6em;"> <div class="datenum"><%= d.day %></div>
     <% Lesson.where(start_time: d.all_day).each do |l| %>
-    <%= l.student.last_name %>
+    <%= link_to l.student.last_name, edit_lesson_path(l), :class => "ui button small fluid" %>
     <% end %>
 </td>
 

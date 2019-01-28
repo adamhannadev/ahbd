@@ -29,7 +29,8 @@
   
 }
 .datenum{
-    display: inline-block;
-    vertical-align: top;
+    position: absolute;
+    top:5px;
+    left:5px;
 }
 

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :packages
   resources :payments
   resources :lessons
-  get 'calendar', to: 'lessons#calendar', as: 'calendar'
+  resources :calendar
   resources :students
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
