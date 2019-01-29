@@ -2,9 +2,16 @@
     <% @monthparam = params['month'].to_date %>
     <% @beginning_of_month = @monthparam.beginning_of_month %>
   <% @end_of_month = @monthparam.end_of_month %>
-  <%= link_to "next", calendar_index_url(:month => @monthparam += 1.month), class: "ui button" %>
-  <%= link_to "prev", calendar_index_url(:month => @monthparam -= 2.months), class: "ui button" %>
-<table class="ui celled table">
+  <div class="ui secondary three item menu">
+<%= link_to "prev", calendar_index_url(:month => @monthparam -= 1.month), class: "ui button" %>
+
+    <div class="header item">
+    Month Name
+  </div>
+    <%= link_to "next", calendar_index_url(:month => @monthparam += 2.months), class: "ui button" %>
+</div>
+
+<table class="ui unstackable celled table">
     <thead>
         <tr>
    <th>Sunday</th><th>Monday</th>
@@ -21,12 +28,25 @@
 <% end %>
 
 <% if d.wday == 0 %> </tr><tr><% end %>
+<% if mobile_device %>
+<td style="position:relative;padding-top:25px;height:6em;"> <div class="datenum"><%= d.day %></div>
+    <div class="ui mini blue statistic">
+  <div class="value">
+    <%= link_to Lesson.where(start_time: d.all_day).count, lessons_path() %>
+  </div>
+  <div class="mini label">
+    Lessons
+  </div>
+</div>
+    
+</td>
+<% else %>
 <td style="position:relative;padding-top:25px;height:6em;"> <div class="datenum"><%= d.day %></div>
     <% Lesson.where(start_time: d.all_day).each do |l| %>
     <%= link_to l.student.last_name, edit_lesson_path(l), :class => "ui button small fluid" %>
     <% end %>
 </td>
-
+<% end %>
 
 <% end %>
 </tr>

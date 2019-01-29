@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">-->
+<meta name="viewport" content="width=device-width, initial-scale=0.5, user-scalable=no, minimum-scale=0.25, maximum-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Adam Hanna Ballroom Dance" %></title>
 
     <%= stylesheet_link_tag    "application" %>
@@ -12,14 +12,15 @@
   </head>
 
   <body>
-    <div class="desktop-only">
+<% if !mobile_device %>
 <%= render partial: 'layouts/partials/admin_menu' %>
-</div>
+<% else %>
   <div class="ui sidebar inverted vertical menu">
 <%= render partial: 'layouts/partials/sidebar' %>
   </div>
+<% end %>
   <div class="pusher">
-    <button style="border-radius:0px;" class="ui icon button mobile only" id="menu"><%= fa_icon "bars button" %></button>
+    <% if mobile_device %><button style="border-radius:0px;" class="ui icon huge button" id="menu"><%= fa_icon "huge bars button" %></button> <% end %>
      <div class="ui container" style="margin-top:1em;">
 
     <%= yield %>
