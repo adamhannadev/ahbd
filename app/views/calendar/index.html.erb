@@ -1,9 +1,9 @@
-    <% @month = Date.current %>
-    <% @monthparam = params['month'].to_date || @month %>
-    <% @beginning_of_month = @monthparam.beginning_of_month || @month.beginning_of_month %>
-  <% @end_of_month = @monthparam.end_of_month || @month.end_of_month %>
-  <%= link_to "next", calendar_index_url(:month => @monthparam += 1.month) %>
-  <%= link_to "prev", calendar_index_url(:month => @monthparam -= 2.months) %>
+
+    <% @monthparam = params['month'].to_date %>
+    <% @beginning_of_month = @monthparam.beginning_of_month %>
+  <% @end_of_month = @monthparam.end_of_month %>
+  <%= link_to "next", calendar_index_url(:month => @monthparam += 1.month), class: "ui button" %>
+  <%= link_to "prev", calendar_index_url(:month => @monthparam -= 2.months), class: "ui button" %>
 <table class="ui celled table">
     <thead>
         <tr>
