@@ -2,11 +2,12 @@
     <% @monthparam = params['month'].to_date %>
     <% @beginning_of_month = @monthparam.beginning_of_month %>
   <% @end_of_month = @monthparam.end_of_month %>
+  <% @month = @monthparam.strftime("%B") %>
   <div class="ui secondary three item menu">
 <%= link_to "prev", calendar_index_url(:month => @monthparam -= 1.month), class: "ui button" %>
 
     <div class="header item">
-    Month Name
+    <%= @month %>
   </div>
     <%= link_to "next", calendar_index_url(:month => @monthparam += 2.months), class: "ui button" %>
 </div>
