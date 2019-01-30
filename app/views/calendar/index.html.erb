@@ -44,7 +44,8 @@
 <% else %>
 <td style="position:relative;padding-top:25px;height:6em;"> <div class="datenum"><%= d.day %></div>
     <% Lesson.where(start_time: d.all_day).each do |l| %>
-    <%= link_to l.student.last_name, edit_lesson_path(l), :class => "ui button small fluid" %>
+    <% colour = l.is_paid ? 'blue' : 'red' %>
+    <%= link_to l.student.last_name, edit_lesson_path(l), :class => "ui #{colour} button small fluid" %>
     <% end %>
 </td>
 <% end %>
