@@ -1,5 +1,14 @@
 
 <h1 class="align-center">Adam Hanna Ballroom Dance</h1>
 
-  Information about the app.
+Packages coming up for renewal:<br>
+<% Package.all.each do |p| %>
+<% if p.remaining < 3 %>
+<%= link_to p.to_s, p %><br>
+<% end %>
+<% end %>
 
+Unpaid Lessons:<br>
+<% Lesson.where("is_paid = false").each do |l| %>
+<%= link_to l.to_s, l %><br>
+<% end %>

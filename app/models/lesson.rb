@@ -11,6 +11,10 @@ class Lesson < ApplicationRecord
         self.start_time  + 60*60
     end
   
+  def to_s
+    self.student.last_name + " - " + self.start_time.to_formatted_s(:long)
+  end
+  
 private
   def set_status
     if self.plan.present?
