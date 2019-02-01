@@ -2,7 +2,7 @@
 <h1 class="align-center">Adam Hanna Ballroom Dance</h1>
 
 Packages coming up for renewal:<br>
-<% Package.where(:active => true).each do |p| %>
+<% Package.where(:status => :active).each do |p| %>
 <% if p.remaining < 3 %>
 <%= link_to p.to_s, p %><br>
 <% end %>
