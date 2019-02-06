@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-    
+    before_action :authenticate_user!, :ensure_admin!, only:[:backup]
     def backup
         @lessons = Lesson.all
         @packages = Package.all
