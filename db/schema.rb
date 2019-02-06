@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_26_151733) do
+ActiveRecord::Schema.define(version: 2019_02_04_052019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,12 +77,10 @@ ActiveRecord::Schema.define(version: 2019_01_26_151733) do
 
   create_table "packages", force: :cascade do |t|
     t.bigint "student_id"
-    t.bigint "payment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "lessons_purchased"
     t.integer "status"
-    t.index ["payment_id"], name: "index_packages_on_payment_id"
     t.index ["student_id"], name: "index_packages_on_student_id"
   end
 
@@ -95,6 +93,8 @@ ActiveRecord::Schema.define(version: 2019_01_26_151733) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
+    t.bigint "package_id"
+    t.index ["package_id"], name: "index_payments_on_package_id"
     t.index ["student_id"], name: "index_payments_on_student_id"
   end
 
@@ -138,8 +138,8 @@ ActiveRecord::Schema.define(version: 2019_01_26_151733) do
   add_foreign_key "lessons", "packages"
   add_foreign_key "lessons", "payments"
   add_foreign_key "lessons", "students"
-  add_foreign_key "packages", "payments"
   add_foreign_key "packages", "students"
+  add_foreign_key "payments", "packages"
   add_foreign_key "payments", "students"
   add_foreign_key "routines", "students"
 end
