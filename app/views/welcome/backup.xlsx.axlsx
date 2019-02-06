@@ -1,0 +1,19 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Lessons") do |sheet|
+sheet.add_row ["Last Name", "Lesson Date and Time", "Plan", "Payment", "Package"]
+  @lessons.each do |l|
+    sheet.add_row [l.student.last_name, l.start_time.to_formatted_s, l.plan, l.package_id, l.payment_id]
+  end
+end
+wb.add_worksheet(name: "Payments") do |sheet|
+sheet.add_row ["Student", "Payment Date", "Type", "Amount", "Derscription"]
+  @payments.each do |p|
+    sheet.add_row [p.student.last_name, p.payment_date.to_formatted_s, p.payment_type, p.amount, p.description]
+  end
+end
+wb.add_worksheet(name: "Packages") do |sheet|
+sheet.add_row ["Student", "Lessons Purchased", "Used", "Remaining"]
+  @packages.each do |p|
+    sheet.add_row [p.student.last_name, p.lessons_purchased, p.lessons.count, p.remaining]
+  end
+end

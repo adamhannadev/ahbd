@@ -12,3 +12,5 @@ Unpaid Lessons:<br>
 <% Lesson.where("is_paid = false").each do |l| %>
 <%= link_to l.to_s, l %><br>
 <% end %>
+
+<%= link_to 'Download as .xlsx', backup_path(format: :xlsx) %>
