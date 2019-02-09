@@ -1,8 +1,8 @@
 wb = xlsx_package.workbook
 wb.add_worksheet(name: "Lessons") do |sheet|
-sheet.add_row ["Last Name", "Lesson Date and Time", "Plan", "Payment", "Package"]
+sheet.add_row ["Last Name", "Lesson Date and Time", "Plan", "Package", "Payment"]
   @lessons.each do |l|
-    sheet.add_row [l.student.last_name, l.start_time.to_formatted_s, l.plan, l.package.to_s, l.payment.to_s]
+    sheet.add_row [l.student.last_name, l.start_time.to_formatted_s, l.plan, Package.where(id: l.package_id).first.to_s, Payment.where(id: l.payment_id).first.to_s]
   end
 end
 wb.add_worksheet(name: "Payments") do |sheet|
@@ -12,8 +12,9 @@ sheet.add_row ["Student", "Payment Date", "Type", "Amount", "Derscription"]
   end
 end
 wb.add_worksheet(name: "Packages") do |sheet|
-sheet.add_row ["Student", "Lessons Purchased", "Used", "Remaining"]
+sheet.add_row ["Student", "Lessons Purchased", "Used", "Remaining", "Lessons"]
   @packages.each do |p|
     sheet.add_row [p.student.last_name, p.lessons_purchased, p.lessons.count, p.remaining]
+      p.lessons.each{|l| sheet.add_row ["","","","", l]}
   end
 end
