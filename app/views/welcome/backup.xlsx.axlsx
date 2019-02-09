@@ -2,7 +2,7 @@ wb = xlsx_package.workbook
 wb.add_worksheet(name: "Lessons") do |sheet|
 sheet.add_row ["Last Name", "Lesson Date and Time", "Plan", "Payment", "Package"]
   @lessons.each do |l|
-    sheet.add_row [l.student.last_name, l.start_time.to_formatted_s, l.plan, l.package_id, l.payment_id]
+    sheet.add_row [l.student.last_name, l.start_time.to_formatted_s, l.plan, l.package.to_s, l.payment.to_s]
   end
 end
 wb.add_worksheet(name: "Payments") do |sheet|

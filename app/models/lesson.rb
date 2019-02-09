@@ -1,6 +1,5 @@
 class Lesson < ApplicationRecord
   belongs_to :student
-  has_one :event, :as => :bookable
   has_one :package
   has_one :payment
   before_save :set_status
