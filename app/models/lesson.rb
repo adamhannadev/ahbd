@@ -6,9 +6,9 @@ class Lesson < ApplicationRecord
   validates :start_time, presence: true
   scope :this_years_lessons, -> { where('start_time > ?', Date.current.beginning_of_year) }
   
-    def end_date
+  def end_date
         self.start_time  + 60*60
-    end
+  end
   
   def to_s
     self.student.last_name + " - " + self.start_time.to_formatted_s(:long)

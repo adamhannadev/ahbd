@@ -2,7 +2,7 @@ class Package < ApplicationRecord
   belongs_to :student
   belongs_to :payment
   has_many :lessons, dependent: :destroy
-   enum status: [ :active, :inactive ]
+  enum status: [ :active, :inactive ]
   after_find :set_activity
   
   def remaining
@@ -10,11 +10,7 @@ class Package < ApplicationRecord
   end
   
   def to_s
-   self.student.last_name + ' - ' + self.payment.payment_date.strftime("%A, %b. %d") 
-  end
-  
-  def title
-   self.student.last_name + ' - ' + self.payment.payment_date.strftime("%A, %b. %d")
+   self.student.last_name + " payment with ID of #{self.payment_id} on " + self.payment.payment_date.strftime("%A, %b. %d") 
   end
 
     def set_activity
