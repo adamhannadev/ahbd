@@ -2,7 +2,7 @@
 <div class="ui card fluid">
   <div class="content">
     <div class="header center aligned"><h2>Package ID - <%= @package.id %></h2></div>
-    <div class="meta"><h4><%= @package.title %></h4></div>
+    <div class="meta"><h4><%= @package.to_s %></h4></div>
     <div class="description">
          <h2 class="centered">Lessons</h2>
         <h3 class="col col-sm-4">Purchased: <%= @package.lessons_purchased %></h3>
@@ -22,7 +22,7 @@
         <div class="content">
             
           <%= link_to l.start_time.strftime("%m/%d/%Y at %I:%M%p"), lessons_path %>
-           <div class="description"><%= l.student.last_name %> Lesson ID: <%= l.id %></div>
+           <div class="description"><%= l.to_s %> - ID: <%= l.id %></div>
         </div>
     
   <% end %>
