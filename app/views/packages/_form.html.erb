@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :payment_id %>
-    <%= form.collection_select(:payment_id, Payment.all, :id, :title, {:prompt => true}, {:class => "search dropdown"}) %>
+    <%= form.collection_select(:payment_id, Payment.all, :id, :to_s, {:prompt => true}, {:class => "search dropdown"}) %>
   </div>
   
   <div class="field">
